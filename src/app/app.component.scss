@@ -1,42 +1,31 @@
-.wrapper {
+body {
     background-color: var(--theme-1);
     transition: all var(--transition-time) ease-in-out;
-    height: 100%;
+}
+
+.wrapper {
+    height: 100vh;
     display: flex;
 }
 
 .sidebar {
     flex: 0 0 auto;
-    width: calc(var(--nav-icon-size) + 2 * var(--nav-gap));
+    width: calc(var(--nav-icon-size) + 2 * var(--gap));
     height: 100%;
     transition: all var(--transition-time) ease-in-out;
-    //transition-delay: 50ms;
-    min-width: calc(var(--nav-icon-size) + 2 * var(--nav-gap));
+    min-width: calc(var(--nav-icon-size) + 2 * var(--gap));
 }
 
-.clickNet {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0vw;
-    height: 0vh;
-    z-index: 29;
-}
-
-.main {
-    color: var(--theme-5);
+main {
+    color: var(--theme-3);
     flex: 1 0 0%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all var(--transition-time) ease-in-out;
-    //transition-delay: 50ms;
+    padding: calc(var(--nav-icon-size) + 2 * var(--gap));
 }
 
 // Medium threshold
 @media (min-width: 1200px) {
-    .sidebar.push {
+    .sidebar.open {
         width: var(--nav-per);
         min-width: var(--nav-min);
         max-width: var(--nav-max);
@@ -44,13 +33,11 @@
 }
 
 @media (max-width: 1200px) {
-    .clickNet.enabled {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .main.blur {
+    main.blur {
         filter: blur(2px);
+    }
+    main {
+        padding: calc(2 * var(--gap));
     }
 }
 
@@ -59,5 +46,11 @@
     .sidebar {
         width: 0;
         min-width: 0;
+    }
+    main {
+        padding: var(--gap);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

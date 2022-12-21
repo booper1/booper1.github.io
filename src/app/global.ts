@@ -1,15 +1,14 @@
 export class Global {
     public static author: string = "Booper_1";
 
-    public static topBun: any;
-    public static patty: any;
-    public static botBun: any;
-    public static sidebar: any;
-    public static clickNet: any;
-    public static nav: any;
-    public static main: any;
-    public static light: any;
-    public static dark: any;
+    public static topBun: HTMLElement | null;
+    public static patty: HTMLElement | null;
+    public static botBun: HTMLElement | null;
+    public static sidebar: HTMLElement | null;
+    public static nav: HTMLElement | null;
+    public static main: HTMLElement | null;
+    public static light: HTMLElement | null;
+    public static dark: HTMLElement | null;
     public static navOpen: boolean = true;
 
     public static page: string = "";
@@ -18,8 +17,7 @@ export class Global {
         Global.topBun != null ? Global.topBun.classList.toggle('angle') : console.log("Undefined");
         Global.patty != null ? Global.patty.classList.toggle('hide') : console.log("Undefined");
         Global.botBun != null ? Global.botBun.classList.toggle('angle') : console.log("Undefined");
-        Global.sidebar != null ? Global.sidebar.classList.toggle('push') : console.log("Undefined");
-        Global.clickNet != null ? Global.clickNet.classList.toggle('enabled') : console.log("Undefined");
+        Global.sidebar != null ? Global.sidebar.classList.toggle('open') : console.log("Undefined");
         Global.nav != null ? Global.nav.classList.toggle('show') : console.log("Undefined");
         Global.main != null ? Global.main.classList.toggle('blur') : console.log("Undefined");
         Global.navOpen = !Global.navOpen;

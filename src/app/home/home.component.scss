@@ -1,1 +1,76 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
 
+div.display {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: var(--gap);
+    gap: var(--gap);
+
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+.season {
+    color: var(--logo-theme-1);
+    font-weight: bold;
+    transition: all var(--transition-time) ease-in-out;
+}
+
+div.logo {
+    flex: 0 0 40%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+svg {
+    width: 20vw;
+    max-width: var(--nav-min);
+    transition: all var(--transition-time) ease-in-out;
+}
+
+stop, rect {
+    transition: all var(--transition-time) ease-in-out;
+}
+
+button {
+    background-color: var(--logo-theme-1);
+    border: none;
+    width: 200px;
+    border-radius: 17px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 6px;
+    transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
+
+    &:active {
+        box-shadow: 0 3px var(--theme-2);
+        transform: translateY(3px);
+    }
+}
+
+@media (max-width: 576px) {
+    div.display {
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: var(--gap);
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+    div.logo {
+        display: none;
+    }
+}

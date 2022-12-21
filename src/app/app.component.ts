@@ -13,12 +13,17 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
         Global.sidebar = document.getElementById("side");
-        Global.clickNet = document.getElementById("clickNet");
         Global.main = document.getElementById("main");
     }
 
     toggleNav(): void {
         Global.toggleNav();
+    }
+
+    checkBlur(): void {
+        if (window.matchMedia("(max-width: 1200px)").matches && Global.main?.classList.contains("blur")) {
+            Global.toggleNav();
+        }
     }
 
     changeOfRoutes(event: any): void {

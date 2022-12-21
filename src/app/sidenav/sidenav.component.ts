@@ -47,7 +47,7 @@ export class SidenavComponent implements OnInit {
         }
     }
 
-    onKeyDownEvent(route: string) {
+    onKeyEvent(route: string) {
         this.router.navigate([route], { relativeTo: this.route });
     }
 
