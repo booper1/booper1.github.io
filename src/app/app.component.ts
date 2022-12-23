@@ -14,6 +14,12 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         Global.sidebar = document.getElementById("side");
         Global.main = document.getElementById("main");
+
+        const d = new Date();
+        let month = d.getMonth();
+        Global.season = Math.floor(((month + 1) % 12) / 3);
+
+        Global.setSeasonTheme();
     }
 
     toggleNav(): void {
@@ -21,7 +27,7 @@ export class AppComponent implements OnInit {
     }
 
     checkBlur(): void {
-        if (window.matchMedia("(max-width: 1200px)").matches && Global.main?.classList.contains("blur")) {
+        if (Global.isBlurred()) {
             Global.toggleNav();
         }
     }

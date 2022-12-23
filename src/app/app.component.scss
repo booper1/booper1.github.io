@@ -21,9 +21,10 @@ main {
     flex: 1 0 0%;
     transition: all var(--transition-time) ease-in-out;
     padding: calc(var(--nav-icon-size) + 2 * var(--gap));
+    overflow: auto;
 }
 
-// Medium threshold
+// Over Medium threshold
 @media (min-width: 1200px) {
     .sidebar.open {
         width: var(--nav-per);
@@ -32,6 +33,7 @@ main {
     }
 }
 
+// Under Medium threshold
 @media (max-width: 1200px) {
     main.blur {
         filter: blur(2px);
@@ -41,16 +43,10 @@ main {
     }
 }
 
-// Small threshold
+// Under Small threshold
 @media (max-width: 576px) {
     .sidebar {
         width: 0;
         min-width: 0;
-    }
-    main {
-        padding: var(--gap);
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 }

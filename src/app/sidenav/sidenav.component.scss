@@ -5,8 +5,8 @@
     top: var(--gap);
     left: var(--gap);
     cursor: pointer;
-    border-radius: 50%;
     z-index: 99;
+    border-radius: 50%;
     transition: all calc(var(--transition-time) / 2) ease-in-out;
     background: var(--theme-4);
 

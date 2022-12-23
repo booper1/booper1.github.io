@@ -5,7 +5,7 @@
 }
 
 div.display {
-    flex: 0 0 60%;
+    flex: 0 0 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,14 +17,8 @@ div.display {
     }
 }
 
-.season {
-    color: var(--logo-theme-1);
-    font-weight: bold;
-    transition: all var(--transition-time) ease-in-out;
-}
-
 div.logo {
-    flex: 0 0 40%;
+    flex: 0 0 35%;
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -35,6 +29,8 @@ svg {
     width: 20vw;
     max-width: var(--nav-min);
     transition: all var(--transition-time) ease-in-out;
+    border-radius: 17%;
+    cursor: pointer;
 }
 
 stop, rect {
@@ -64,13 +60,19 @@ button {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-right: var(--gap);
 
         p {
             font-size: 1.5rem;
         }
     }
     div.logo {
-        display: none;
+        flex: 0 0 0%;
+    }
+    svg {
+        position: absolute;
+        height: var(--nav-icon-size);
+        width: var(--nav-icon-size);
+        top: var(--gap);
+        right: var(--gap);
     }
 }

@@ -28,3 +28,39 @@
     --logo-theme-2: var(--theme-3);
     --logo-theme-3: var(--theme-3);
 }
+
+.season {
+    color: var(--logo-theme-1);
+    font-weight: bold;
+    transition: all var(--transition-time) ease-in-out;
+    text-shadow: -0.5px 0.5px var(--theme-3);
+}
+
+::selection {
+    background: var(--theme-3); /* WebKit/Blink Browsers */
+    color: var(--theme-2);
+}
+
+::-moz-selection {
+    background: var(--theme-3); /* Gecko Browsers */
+    color: var(--theme-2);
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--theme-2);
+    border-radius: 0.5em;
+    box-shadow: inset 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--theme-3);
+    border-radius: 0.5em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-3);
+}
