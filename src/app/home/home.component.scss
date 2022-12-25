@@ -26,7 +26,7 @@ div.logo {
 }
 
 svg {
-    width: 20vw;
+    width: 13vw;
     max-width: var(--nav-min);
     transition: all var(--transition-time) ease-in-out;
     border-radius: 17%;
@@ -54,20 +54,24 @@ button {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1200px) {
+    .wrapper {
+        justify-content: center;
+    }
+
     div.display {
         flex: 0 0 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        max-width: 100ch;
 
         p {
             font-size: 1.5rem;
         }
     }
+
     div.logo {
         flex: 0 0 0%;
     }
+
     svg {
         position: absolute;
         height: var(--nav-icon-size);

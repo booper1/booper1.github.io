@@ -38,4 +38,13 @@ export class AppComponent implements OnInit {
             Global.page = "home";
         }
     }
+
+    onResize(event: any): void {
+        if (Global.navOpen && window.matchMedia("(max-width: 1200px)").matches) {
+            Global.toggleNav();
+        }
+        else if (!Global.navOpen && !window.matchMedia("(max-width: 1200px)").matches) {
+            Global.toggleNav();
+        }
+    }
 }
