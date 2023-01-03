@@ -17,7 +17,7 @@
             <div class="navText"><span>{{ item.title }}&nbsp;</span></div>
         </li>
     </ul>
-    <div class="navTheme" (click)="toggleTheme()">
+    <div class="navTheme" (click)="toggleTheme()" title="Theme Toggle">
         <fa-icon [icon]="['fas', 'sun']" class="theme show" id="light"></fa-icon>
         <fa-icon [icon]="['fas', 'moon']" class="theme" id="dark"></fa-icon>
     </div>

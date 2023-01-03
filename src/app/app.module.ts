@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -33,5 +34,6 @@ import { ContactComponent } from './contact/contact.component';
 export class AppModule {
     constructor(library: FaIconLibrary) {
         library.addIconPacks(fas);
+        library.addIconPacks(fab);
     }
 }
