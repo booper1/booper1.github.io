@@ -1,11 +1,10 @@
 <body>
-    <div class="wrapper">
-        <div class="sidebar push" id="side">
+    <div class="wrapper" (window:resize)="onResize($event)">
+        <div class="sidebar open" id="side">
             <app-sidenav></app-sidenav>
         </div>
-        <div class="clickNet enabled" id="clickNet" (click)="toggleNav()"></div>
-        <div class="main blur" id="main">
-            <router-outlet></router-outlet>
-        </div>
+        <main class="blur" id="main" (click)="checkBlur()">
+            <router-outlet (activate)="changeOfRoutes($event)"></router-outlet>
+        </main>
     </div>
 </body>

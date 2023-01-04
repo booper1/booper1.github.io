@@ -8,15 +8,17 @@
     <ul>
         <li *ngFor="let item of navItems"
             [routerLink]="[item.title]"
-            (keydown.enter)="onKeyDownEvent(item.title)"
-            (click)="closeNav()">
+            (keydown.enter)="onKeyEvent(item.title)"
+            (keydown.space)="onKeyEvent(item.title)"
+            (click)="closeNav()"
+            [style.background-color] = "currentPage(item.title) ? 'grey' : ''">
 
             <div class="navIcon"><fa-icon [icon]="item.icon"></fa-icon></div>
             <div class="navText"><span>{{ item.title }}&nbsp;</span></div>
         </li>
     </ul>
-    <div class="navTheme" (click)="toggleTheme()">
-        <fa-icon [icon]="['fas', 'sun']" class="mode" id="light"></fa-icon>
-        <fa-icon [icon]="['fas', 'moon']" class="mode show" id="dark"></fa-icon>
+    <div class="navTheme" (click)="toggleTheme()" title="Theme Toggle">
+        <fa-icon [icon]="['fas', 'sun']" class="theme show" id="light"></fa-icon>
+        <fa-icon [icon]="['fas', 'moon']" class="theme" id="dark"></fa-icon>
     </div>
 </nav>

@@ -1,31 +1,66 @@
-:root {
+[data-theme="dark"] {
     --theme-1: #121212; // Background
-    --theme-2: #202020; // Surface
-    --theme-3: #fc7b00; // Primary
-    --theme-4: #4a7912; // Secondary
-    --theme-5: #d7d7d7; // On Background
-    --theme-6: #a2a2a2; // On Surface Head
-    --theme-7: #e2e2e2; // On Surface Main
-    --theme-8: #7c3c00; // On Primary
-    --theme-9: #1a2904; // On Secondary
-    --theme-10: #0000008a; // Shadow
+    --theme-2: #323232; // Surface
+    --theme-3: #d7d7d7; // On Background
+    --theme-4: #a2a2a2; // On Surface Head
+    --theme-5: #e2e2e2; // On Surface Main
+    --theme-6: #0000008a; // Shadow
+}
 
-    --nav-gap: 1rem;
+[data-theme="light"] {
+    --theme-1: #ededed; // Background
+    --theme-2: #cdcdcd; // Surface
+    --theme-3: #282828; // On Background
+    --theme-4: #5d5d5d; // On Surface Head
+    --theme-5: #1d1d1d; // On Surface Main
+    --theme-6: #0000008a; // Shadow
+}
+
+:root {
+    --gap: 1rem;
     --nav-icon-size: 60px;
     --nav-per: 17%;
     --nav-min: 260px;
     --nav-max: 360px;
+    --transition-time: 300ms;
+    --logo-theme-bg: var(--theme-1);
+    --logo-theme-1: var(--theme-3);
+    --logo-theme-2: var(--theme-3);
+    --logo-theme-3: var(--theme-3);
 }
 
-[data-theme="light"] {
-    --theme-1: #ffffff; // Background
-    --theme-2: #eeeeee; // Surface
-    --theme-3: #fc7b00; // Primary
-    --theme-4: #4a7912; // Secondary
-    --theme-5: #000000; // On Background
-    --theme-6: #a2a2a2; // On Surface Head
-    --theme-7: #212121; // On Surface Main
-    --theme-8: #7c3c00; // On Primary
-    --theme-9: #1a2904; // On Secondary
-    --theme-10: #00000045; // Shadow
+.season {
+    color: var(--logo-theme-1);
+    font-weight: bold;
+    transition: all var(--transition-time) ease-in-out;
+    text-shadow: -0.5px 0.5px var(--theme-3);
+}
+
+::selection {
+    background: var(--theme-3); /* WebKit/Blink Browsers */
+    color: var(--theme-2);
+}
+
+::-moz-selection {
+    background: var(--theme-3); /* Gecko Browsers */
+    color: var(--theme-2);
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--theme-2);
+    border-radius: 0.5em;
+    box-shadow: inset 0 0 0.5em rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--theme-3);
+    border-radius: 0.5em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--theme-3);
 }

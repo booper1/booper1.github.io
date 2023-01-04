@@ -11,8 +11,7 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent, title: "About " + Global.author },
     { path: 'projects', component: ProjectsComponent, title: Global.author + "'s Projects" },
     { path: 'contact', component: ContactComponent, title: "Contact " + Global.author },
-    { path: 'home', redirectTo: '' },
-    { path: '#', redirectTo: '' }
+    { path: 'home', redirectTo: '' }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);

@@ -33,12 +33,21 @@ export class SidenavComponent implements OnInit {
             Global.toggleNav();
         }
 
-        if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-            Global.toggleTheme();
+        document.documentElement.setAttribute('data-theme', 'light');
+        if (localStorage.getItem('data-theme') === null) {
+            localStorage.setItem('data-theme', 'light');
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                Global.toggleTheme();
+            }
+        }
+        else {
+            if (localStorage.getItem('data-theme') === 'dark') {
+                Global.toggleTheme();
+            }
         }
     }
 
-    onKeyDownEvent(route: string) {
+    onKeyEvent(route: string) {
         this.router.navigate([route], { relativeTo: this.route });
     }
 
@@ -54,5 +63,9 @@ export class SidenavComponent implements OnInit {
 
     toggleTheme(): void {
         Global.toggleTheme();
+    }
+
+    currentPage(navItemTitle: string): boolean {
+        return navItemTitle === Global.page ? true : false;
     }
 }
