@@ -1,13 +1,14 @@
 <div class="wrapper">
     <div class="primary">
         <h1>
-            Hello, I'm <span class="season">Cooper Baumgarth</span>!
+            Hello, I'm <span class="seasonText">Cooper Baumgarth</span>!
         </h1>
         <p>
-            I'm a <span class="season">Software Developer</span> nearing college graduation in May 2023.
+            I'm a <span class="seasonText">Software Developer</span> nearing college graduation in May 2023.
             I'm currently based in Cincinnati, Ohio, but I'm always open to new adventures!
         </p>
-        <button [routerLink]="'about'"
+        <button class="seasonButton"
+                [routerLink]="'about'"
                 (keydown.enter)="onKeyEvent('about')"
                 (keydown.space)="onKeyEvent('about')">
             More About Me

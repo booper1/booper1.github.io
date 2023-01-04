@@ -54,29 +54,9 @@ div.secondary {
 }
 
 .resume {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap);
-    background-color: var(--logo-theme-1);
     width: 250px;
-    border-radius: 17px;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 6px;
     margin: calc(var(--gap));
-    cursor: pointer;
-    text-decoration: none;
-
-    &:active {
-        box-shadow: 0 3px var(--theme-2);
-        transform: translateY(3px);
-    }
-
-    fa-icon {
-        font-size: 2rem;
-    }
+    color: rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: 1200px) {

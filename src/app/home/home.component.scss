@@ -38,20 +38,7 @@ stop, rect {
 }
 
 button {
-    background-color: var(--logo-theme-1);
-    border: none;
     width: 200px;
-    border-radius: 17px;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 6px;
-    transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
-
-    &:active {
-        box-shadow: 0 3px var(--theme-2);
-        transform: translateY(3px);
-    }
 }
 
 @media (max-width: 1200px) {

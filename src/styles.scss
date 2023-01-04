@@ -29,11 +29,37 @@
     --logo-theme-3: var(--theme-3);
 }
 
-.season {
+.seasonText {
     color: var(--logo-theme-1);
     font-weight: bold;
-    transition: all var(--transition-time) ease-in-out;
     text-shadow: -0.5px 0.5px var(--theme-3);
+    transition: all var(--transition-time) ease-in-out;
+}
+
+.seasonButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    border: none;
+    background-color: var(--logo-theme-1);
+    border-radius: 17px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
+
+    &:active {
+        box-shadow: 0 3px var(--theme-2);
+        transform: translateY(3px);
+    }
+
+    fa-icon {
+        font-size: 2rem;
+    }
 }
 
 ::selection {

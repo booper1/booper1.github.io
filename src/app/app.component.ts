@@ -40,10 +40,10 @@ export class AppComponent implements OnInit {
     }
 
     onResize(event: any): void {
-        if (Global.navOpen && window.matchMedia("(max-width: 1200px)").matches) {
+        if (!Global.navOpen && window.matchMedia("(min-width: 1200px)").matches) {
             Global.toggleNav();
         }
-        else if (!Global.navOpen && !window.matchMedia("(max-width: 1200px)").matches) {
+        else if (Global.navOpen && !window.matchMedia("(min-width: 1200px)").matches) {
             Global.toggleNav();
         }
     }
