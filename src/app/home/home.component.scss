@@ -28,13 +28,12 @@ div.secondary {
 svg {
     width: 13vw;
     max-width: var(--nav-min);
-    transition: all var(--transition-time) ease-in-out;
     border-radius: 17%;
     cursor: pointer;
 }
 
 stop, rect {
-    transition: all var(--transition-time) ease-in-out;
+    transition: stop-color var(--transition-time) ease-in-out, fill var(--transition-time) ease-in-out;
 }
 
 button {
