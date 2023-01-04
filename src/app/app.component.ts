@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        Global.sidebar = document.getElementById("side");
         Global.main = document.getElementById("main");
 
         const d = new Date();

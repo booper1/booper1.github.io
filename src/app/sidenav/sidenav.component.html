@@ -1,24 +1,25 @@
-<div class="burger" (click)="toggleNav()">
-    <div class="topBun angle" id="b1"></div>
-    <div class="patty hide" id="b2"></div>
-    <div class="botBun angle" id="b3"></div>
-</div>
-
-<nav class="show" id="nav">
-    <ul>
-        <li *ngFor="let item of navItems"
-            [routerLink]="[item.title]"
-            (keydown.enter)="onKeyEvent(item.title)"
-            (keydown.space)="onKeyEvent(item.title)"
-            (click)="closeNav()"
-            [style.background-color] = "currentPage(item.title) ? 'grey' : ''">
-
-            <div class="navIcon"><fa-icon [icon]="item.icon"></fa-icon></div>
-            <div class="navText"><span>{{ item.title }}&nbsp;</span></div>
-        </li>
-    </ul>
-    <div class="navTheme" (click)="toggleTheme()" title="Theme Toggle">
-        <fa-icon [icon]="['fas', 'sun']" class="theme show" id="light"></fa-icon>
-        <fa-icon [icon]="['fas', 'moon']" class="theme" id="dark"></fa-icon>
+<div id="navContent">
+    <div class="navAction">
+        <div id="burger" class="cross" (click)="toggleNav()">
+            <div id="topBun"></div>
+            <div id="patty"></div>
+            <div id="botBun"></div>
+        </div>
     </div>
-</nav>
+    <div id="pageGroup">
+        <div class="page" *ngFor="let item of navItems"
+             [routerLink]="[item.title]"
+             (keydown.enter)="onKeyEvent(item.title)"
+             (keydown.space)="onKeyEvent(item.title)"
+             (click)="closeNav()"
+             [style.background-color]="currentPage(item.title) ? 'grey' : ''">
+
+            <div class="pageIcon"><fa-icon [icon]="item.icon" [title]="item.title"></fa-icon></div>
+            <div class="pageTitle"><span>{{ item.title }}</span></div>
+        </div>
+    </div>
+    <div class="navAction navTheme" title="Theme Toggle">
+        <fa-icon [icon]="['fas', 'sun']" class="theme show" id="light" (click)="toggleTheme()"></fa-icon>
+        <fa-icon [icon]="['fas', 'moon']" class="theme" id="dark" (click)="toggleTheme()"></fa-icon>
+    </div>
+</div>

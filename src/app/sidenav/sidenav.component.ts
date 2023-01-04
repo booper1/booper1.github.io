@@ -11,10 +11,10 @@ import { Global } from '../global';
 })
 export class SidenavComponent implements OnInit {
     navItems: { title: string; icon: IconProp }[] = [
-        { title: "home", icon: "house"},
-        { title: "about", icon: "user"},
-        { title: "projects", icon: "list-check"},
-        { title: "contact", icon: "message"}
+        { title: "Home", icon: "house"},
+        { title: "About", icon: "user"},
+        { title: "Projects", icon: "list-check"},
+        { title: "Contact", icon: "message"}
     ];
 
     constructor(private router: Router,
@@ -22,10 +22,8 @@ export class SidenavComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        Global.topBun = document.getElementById("b1");
-        Global.patty = document.getElementById("b2");
-        Global.botBun = document.getElementById("b3");
-        Global.nav = document.getElementById("nav");
+        Global.burger = document.getElementById("burger");
+        Global.navContent = document.getElementById("navContent");
         Global.light = document.getElementById("light");
         Global.dark = document.getElementById("dark");
 
@@ -66,6 +64,6 @@ export class SidenavComponent implements OnInit {
     }
 
     currentPage(navItemTitle: string): boolean {
-        return navItemTitle === Global.page ? true : false;
+        return navItemTitle.toLowerCase() === Global.page.toLowerCase() ? true : false;
     }
 }

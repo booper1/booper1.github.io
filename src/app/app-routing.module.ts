@@ -8,10 +8,10 @@ import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, title: Global.author + "'s Homepage" },
-    { path: 'about', component: AboutComponent, title: "About " + Global.author },
-    { path: 'projects', component: ProjectsComponent, title: Global.author + "'s Projects" },
-    { path: 'contact', component: ContactComponent, title: "Contact " + Global.author },
-    { path: 'home', redirectTo: '' }
+    { path: 'About', component: AboutComponent, title: "About " + Global.author },
+    { path: 'Projects', component: ProjectsComponent, title: Global.author + "'s Projects" },
+    { path: 'Contact', component: ContactComponent, title: "Contact " + Global.author },
+    { path: 'Home', redirectTo: '' }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);

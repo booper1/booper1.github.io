@@ -2,67 +2,69 @@
     display: flex;
     flex-direction: row;
     height: 100%;
-}
 
-div.primary {
-    flex: 0 0 65%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: var(--gap);
-    gap: var(--gap);
-
-    p {
-        font-size: 1.5rem;
-    }
-}
-
-div.secondary {
-    flex: 0 0 35%;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-svg {
-    width: 13vw;
-    max-width: var(--nav-min);
-    border-radius: 17%;
-    cursor: pointer;
-}
-
-stop, rect {
-    transition: stop-color var(--transition-time) ease-in-out, fill var(--transition-time) ease-in-out;
-}
-
-button {
-    width: 200px;
-}
-
-@media (max-width: 1200px) {
-    .wrapper {
+    .primary {
+        flex: 0 0 65%;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-    }
-
-    div.primary {
-        flex: 0 0 100%;
-        max-width: 100ch;
+        padding-right: var(--gap);
+        gap: var(--gap);
 
         p {
             font-size: 1.5rem;
         }
+
+        button {
+            width: 200px;
+        }
     }
 
-    div.secondary {
-        flex: 0 0 0%;
-    }
+    .secondary {
+        flex: 0 0 35%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    svg {
-        position: absolute;
-        height: var(--nav-icon-size);
-        width: var(--nav-icon-size);
-        top: var(--gap);
-        right: var(--gap);
+        svg {
+            width: 13vw;
+            max-width: var(--nav-min);
+            border-radius: 17%;
+            cursor: pointer;
+
+            stop, rect {
+                transition: stop-color var(--transition-time) ease-in-out, fill var(--transition-time) ease-in-out;
+            }
+        }
+    }
+}
+
+// Medium
+@media (max-width: 1200px) {
+    .wrapper {
+        justify-content: center;
+
+        .primary {
+            flex: 0 0 100%;
+            max-width: 100ch;
+
+            p {
+                font-size: 1.5rem;
+            }
+        }
+
+        .secondary {
+            flex: 0 0 0%;
+
+            svg {
+                position: absolute;
+                height: var(--nav-icon-size);
+                width: var(--nav-icon-size);
+                top: var(--gap);
+                right: var(--gap);
+                box-shadow: 0px 0px 0.27em var(--theme-7);
+            }
+        }
     }
 }

@@ -4,7 +4,8 @@
     --theme-3: #d7d7d7; // On Background
     --theme-4: #a2a2a2; // On Surface Head
     --theme-5: #e2e2e2; // On Surface Main
-    --theme-6: #0000008a; // Shadow
+    --theme-6: #0000008a; // Shadow Dark
+    --theme-7: #ffffff8a; // Shadow Light
 }
 
 [data-theme="light"] {
@@ -13,7 +14,8 @@
     --theme-3: #282828; // On Background
     --theme-4: #5d5d5d; // On Surface Head
     --theme-5: #1d1d1d; // On Surface Main
-    --theme-6: #0000008a; // Shadow
+    --theme-6: #0000008a; // Shadow Dark
+    --theme-7: #ffffff8a; // Shadow Light
 }
 
 :root {
@@ -33,7 +35,8 @@
     color: var(--logo-theme-1);
     font-weight: bold;
     text-shadow: -0.5px 0.5px var(--theme-3);
-    transition: all var(--transition-time) ease-in-out;
+    transition: color var(--transition-time) ease-in-out,
+                text-shadow var(--transition-time) ease-in-out;
 }
 
 .seasonButton {
@@ -50,7 +53,8 @@
     padding: 6px;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out;
+    transition: background-color var(--transition-time) ease-in-out,
+                color var(--transition-time) ease-in-out;
 
     &:active {
         box-shadow: 0 3px var(--theme-2);

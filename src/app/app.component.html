@@ -1,8 +1,8 @@
 <body>
     <div class="wrapper" (window:resize)="onResize($event)">
-        <div class="sidebar open" id="side">
+        <nav>
             <app-sidenav></app-sidenav>
-        </div>
+        </nav>
         <main class="blur" id="main" (click)="checkBlur()">
             <router-outlet (activate)="changeOfRoutes($event)"></router-outlet>
         </main>
