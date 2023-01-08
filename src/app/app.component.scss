@@ -37,7 +37,7 @@ body {
             }
 
             main {
-                padding: calc(2 * var(--gap));
+                padding: calc(var(--nav-icon-size) + 2 * var(--gap)) calc(2 * var(--gap));
             }
 
             main.blur {

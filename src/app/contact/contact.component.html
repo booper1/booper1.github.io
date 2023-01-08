@@ -1,64 +1,37 @@
-<h1>
-    Contact Coming Soon
-</h1>
-
-<!--<section id="contact">
-    <h1>
-        Contact
-    </h1>
-    <div class="contact-wrapper">
-        <form id="contact-form">
-
-            <div class="form-group">
-                <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+<div class="wrapper">
+    <div class="primary">
+        <form>
+            <div>
+                <input class="form-input" type="text" placeholder="NAME" value="" required>
             </div>
 
-            <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+            <div>
+                <input class="form-input" type="email" placeholder="EMAIL" value="" required>
             </div>
 
-            <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+            <div>
+                <textarea class="form-input" rows="7" placeholder="MESSAGE" required></textarea>
+            </div>
 
-            <button class="btn send-button" id="submit" type="submit" value="SEND">
-                <div class="alt-send-button">
-                    <fa-icon [icon]="['fas', 'paper-plane']"></fa-icon><span class="send-text">SEND</span>
-                </div>
+            <button class="submit" type="submit">
+                <fa-icon [icon]="['fas', 'paper-plane']"></fa-icon><span> SEND</span>
             </button>
-
-        </form>-->
-
-        <!-- ---------- -->
-
-        <!--<div class="direct-contact-container">
-
-            <ul class="contact-list">
-                <li class="list-item"><fa-icon [icon]="['fas', 'map-marker']"></fa-icon><span class="contact-text place">Cincinnati, Ohio</span></li>
-
-                <li class="list-item"><fa-icon [icon]="['fas', 'phone']"></fa-icon><span class="contact-text phone"><a href="tel:1-513-659-3006" title="Mobile Phone Number">(513) 659-3006</a></span></li>
-
-                <li class="list-item"><fa-icon [icon]="['fas', 'envelope']"></fa-icon><span class="contact-text gmail"><a href="mailto:#" title="Personal Email">cooperbaumgarth@gmail.com</a></span></li>
-
-            </ul>
-
-            <hr>
-            <ul class="social-media-list">
-                <li>
-                    <a href="https://github.com/booper1" target="_blank" class="contact-icon">
-                        <fa-icon [icon]="['fab', 'github']"></fa-icon>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/cooperbaumgarth/" target="_blank" class="contact-icon">
-                        <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
-                    </a>
-                </li>
-            </ul>
-            <hr>
-
-            <div class="copyright">&copy; Cooper Baumgarth, 2023</div>
-
-        </div>
-
+        </form>
     </div>
-
-</section>-->
+    <div class="secondary">
+        <div id="infoGroup">
+            <div class="infoLine">
+                <div class="infoIcon"><fa-icon [icon]="['fas', 'location-dot']" title="Location"></fa-icon></div>
+                <div class="infoTitle"><span>Cincinnati, Ohio</span></div>
+            </div>
+            <div class="infoLine">
+                <div class="infoIcon"><fa-icon [icon]="['fas', 'phone']" title="Mobile Phone"></fa-icon></div>
+                <div class="infoTitle"><a href="tel:1-513-659-3006" title="Give me a call">(513) 659-3006</a></div>
+            </div>
+            <div class="infoLine">
+                <div class="infoIcon"><fa-icon [icon]="['fas', 'envelope']" title="Email"></fa-icon></div>
+                <div class="infoTitle"><a href="mailto:cooperbaumgarth@gmail.com" title="Send me an email">cooperbaumgarth@gmail.com</a></div>
+            </div>
+        </div>
+    </div>
+</div>

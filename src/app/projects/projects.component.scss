@@ -1,6 +1,12 @@
 h1 {
     text-align: center;
-    margin: 0 var(--gap);
     padding: 40px 0;
     text-transform: uppercase;
+}
+
+// Small
+@media (max-width: 576px) {
+    h1 {
+        padding: initial;
+    }
 }
