@@ -1,6 +1,7 @@
 body {
     background-color: var(--theme-1);
     transition: all var(--transition-time) ease-in-out;
+    overflow: hidden;
 
     .wrapper {
         height: 100vh;

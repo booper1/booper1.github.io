@@ -1,36 +1,51 @@
 <div class="wrapper">
-    <div class="primary">
-        <form>
-            <div>
-                <input class="form-input" type="text" placeholder="NAME" value="" required>
-            </div>
+    <h1>
+        Contact
+    </h1>
 
-            <div>
-                <input class="form-input" type="email" placeholder="EMAIL" value="" required>
-            </div>
+    <div class="content">
+        <div class="primary">
+            <form>
+                <div>
+                    <input class="form-input" type="text" placeholder="NAME" value="" required>
+                </div>
 
-            <div>
-                <textarea class="form-input" rows="7" placeholder="MESSAGE" required></textarea>
-            </div>
+                <div>
+                    <input class="form-input" type="email" placeholder="EMAIL" value="" required>
+                </div>
 
-            <button class="submit" type="submit">
-                <fa-icon [icon]="['fas', 'paper-plane']"></fa-icon><span> SEND</span>
-            </button>
-        </form>
-    </div>
-    <div class="secondary">
-        <div id="infoGroup">
-            <div class="infoLine">
-                <div class="infoIcon"><fa-icon [icon]="['fas', 'location-dot']" title="Location"></fa-icon></div>
-                <div class="infoTitle"><span>Cincinnati, Ohio</span></div>
+                <div>
+                    <textarea class="form-input" rows="7" placeholder="MESSAGE" required></textarea>
+                </div>
+
+                <button class="submit" type="submit">
+                    <fa-icon [icon]="['fas', 'paper-plane']"></fa-icon><span> SEND</span>
+                </button>
+            </form>
+        </div>
+        <div class="secondary">
+            <div id="infoGroup">
+                <div class="infoLine">
+                    <div class="infoIcon"><fa-icon [icon]="['fas', 'location-dot']" title="Location"></fa-icon></div>
+                    <div class="infoTitle"><span>Cincinnati, Ohio</span></div>
+                </div>
+                <div class="infoLine">
+                    <div class="infoIcon"><fa-icon [icon]="['fas', 'phone']" title="Mobile Phone"></fa-icon></div>
+                    <div class="infoTitle"><a href="tel:1-513-659-3006" title="Give me a call">(513) 659-3006</a></div>
+                </div>
+                <div class="infoLine">
+                    <div class="infoIcon"><fa-icon [icon]="['fas', 'envelope']" title="Email"></fa-icon></div>
+                    <div class="infoTitle"><a href="mailto:cooperbaumgarth@gmail.com" title="Send me an email">cooperbaumgarth@gmail.com</a></div>
+                </div>
             </div>
-            <div class="infoLine">
-                <div class="infoIcon"><fa-icon [icon]="['fas', 'phone']" title="Mobile Phone"></fa-icon></div>
-                <div class="infoTitle"><a href="tel:1-513-659-3006" title="Give me a call">(513) 659-3006</a></div>
-            </div>
-            <div class="infoLine">
-                <div class="infoIcon"><fa-icon [icon]="['fas', 'envelope']" title="Email"></fa-icon></div>
-                <div class="infoTitle"><a href="mailto:cooperbaumgarth@gmail.com" title="Send me an email">cooperbaumgarth@gmail.com</a></div>
+            <hr />
+            <div class="media">
+                <a href="https://www.linkedin.com/in/cooperbaumgarth/" target="_blank">
+                    <fa-icon [icon]="['fab', 'linkedin']" title="LinkedIn"></fa-icon>
+                </a>
+                <a href="https://github.com/booper1" target="_blank">
+                    <fa-icon [icon]="['fab', 'github']" title="GitHub"></fa-icon>
+                </a>
             </div>
         </div>
     </div>
