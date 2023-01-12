@@ -13,15 +13,17 @@ export class Global {
     public static page: string = "";
 
     public static toggleNav(): void {
-        Global.burger != null ? Global.burger.classList.toggle('cross') : console.log("Undefined");
-        Global.navContent != null ? Global.navContent.classList.toggle('hide') : console.log("Undefined");
-        Global.main != null ? Global.main.classList.toggle('blur') : console.log("Undefined");
+        void (Global.burger != null && Global.burger.classList.toggle('cross'));
+        void (Global.navContent != null && Global.navContent.classList.toggle('hide'));
         Global.navOpen = !Global.navOpen;
+
+        Global.main?.classList.remove('blur');
+        void (Global.main != null && Global.navOpen && window.matchMedia("(max-width: 1200px)").matches && Global.main.classList.add('blur'));
     }
 
     public static toggleTheme(): void {
-        Global.light != null ? Global.light.classList.toggle('show') : console.log("Undefined");
-        Global.dark != null ? Global.dark.classList.toggle('show') : console.log("Undefined");
+        void (Global.light != null && Global.light.classList.toggle('show'));
+        void (Global.dark != null && Global.dark.classList.toggle('show'));
 
         if (document.documentElement.getAttribute('data-theme') !== 'light') {
             document.documentElement.setAttribute('data-theme', 'light');
@@ -33,41 +35,22 @@ export class Global {
         }
     }
 
-    public static isBlurred(): boolean {
-        if (window.matchMedia("(max-width: 1200px)").matches && Global.main?.classList.contains("blur")) {
-            return true;
-        }
-        return false;
-    }
-
     public static setSeasonTheme(): void {
         switch (this.season) {
             case 0: { // Winter
-                this.root.style.setProperty('--logo-theme-bg', '#151c36');
-                this.root.style.setProperty('--logo-theme-1', '#b390b8');
-                this.root.style.setProperty('--logo-theme-2', '#b5e5e7');
-                this.root.style.setProperty('--logo-theme-3', '#0d72a1');
+                document.documentElement.setAttribute('season-theme', 'winter');
                 break;
             }
             case 1: { // Spring
-                this.root.style.setProperty('--logo-theme-bg', '#075452');
-                this.root.style.setProperty('--logo-theme-1', '#75d481');
-                this.root.style.setProperty('--logo-theme-2', '#f9e830');
-                this.root.style.setProperty('--logo-theme-3', '#f36870');
+                document.documentElement.setAttribute('season-theme', 'spring');
                 break;
             }
             case 2: { // Summer
-                this.root.style.setProperty('--logo-theme-bg', '#3e4a74');
-                this.root.style.setProperty('--logo-theme-1', '#ffad22');
-                this.root.style.setProperty('--logo-theme-2', '#6b9e17');
-                this.root.style.setProperty('--logo-theme-3', '#0299b1');
+                document.documentElement.setAttribute('season-theme', 'summer');
                 break;
             }
             case 3: { // Autumn
-                this.root.style.setProperty('--logo-theme-bg', '#404040');
-                this.root.style.setProperty('--logo-theme-1', '#ce1c00');
-                this.root.style.setProperty('--logo-theme-2', '#fc7b00');
-                this.root.style.setProperty('--logo-theme-3', '#4a7912');
+                document.documentElement.setAttribute('season-theme', 'autumn');
                 break;
             }
         }

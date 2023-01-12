@@ -18,21 +18,45 @@
     --theme-7: #ffffff8a; // Shadow Light
 }
 
+[season-theme="winter"] {
+    --season-bg: #151c36;
+    --season-1: #b390b8;
+    --season-2: #b5e5e7;
+    --season-3: #0d72a1;
+}
+
+[season-theme="spring"] {
+    --season-bg: #075452;
+    --season-1: #75d481;
+    --season-2: #f9e830;
+    --season-3: #f36870;
+}
+
+[season-theme="summer"] {
+    --season-bg: #3e4a74;
+    --season-1: #ffad22;
+    --season-2: #6b9e17;
+    --season-3: #0299b1;
+}
+
+[season-theme="autumn"] {
+    --season-bg: #404040;
+    --season-1: #ce1c00;
+    --season-2: #fc7b00;
+    --season-3: #4a7912;
+}
+
 :root {
     --gap: 1rem;
     --nav-icon-size: 60px;
-    --nav-per: 17%;
+    --nav-per: 17vw;
     --nav-min: 260px;
     --nav-max: 360px;
     --transition-time: 300ms;
-    --logo-theme-bg: var(--theme-1);
-    --logo-theme-1: var(--theme-3);
-    --logo-theme-2: var(--theme-3);
-    --logo-theme-3: var(--theme-3);
 }
 
 .seasonText {
-    color: var(--logo-theme-1);
+    color: var(--season-1);
     font-weight: bold;
     text-shadow: -0.5px 0.5px var(--theme-3);
     transition: color var(--transition-time) ease-in-out,
@@ -45,7 +69,7 @@
     justify-content: center;
     gap: var(--gap);
     border: none;
-    background-color: var(--logo-theme-1);
+    background-color: var(--season-1);
     border-radius: 17px;
     color: rgba(0, 0, 0, 0.6);
     font-size: 1.2rem;

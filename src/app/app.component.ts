@@ -19,6 +19,19 @@ export class AppComponent implements OnInit {
         Global.season = Math.floor(((month + 1) % 12) / 3);
 
         Global.setSeasonTheme();
+
+        document.documentElement.setAttribute('data-theme', 'light');
+        if (localStorage.getItem('data-theme') === null) {
+            localStorage.setItem('data-theme', 'light');
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                Global.toggleTheme();
+            }
+        }
+        else {
+            if (localStorage.getItem('data-theme') === 'dark') {
+                Global.toggleTheme();
+            }
+        }
     }
 
     toggleNav(): void {
@@ -26,7 +39,7 @@ export class AppComponent implements OnInit {
     }
 
     checkBlur(): void {
-        if (Global.isBlurred()) {
+        if (Global.main?.classList.contains("blur")) {
             Global.toggleNav();
         }
     }
@@ -39,10 +52,10 @@ export class AppComponent implements OnInit {
     }
 
     onResize(event: any): void {
-        if (!Global.navOpen && window.matchMedia("(min-width: 1200px)").matches) {
+        if (Global.navOpen && window.matchMedia("(max-width: 1200px)").matches) {
             Global.toggleNav();
         }
-        else if (Global.navOpen && !window.matchMedia("(min-width: 1200px)").matches) {
+        else if (!Global.navOpen && !window.matchMedia("(max-width: 1200px)").matches) {
             Global.toggleNav();
         }
     }

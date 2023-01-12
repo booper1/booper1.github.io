@@ -3,7 +3,7 @@
         <nav>
             <app-sidenav></app-sidenav>
         </nav>
-        <main class="blur" id="main" (click)="checkBlur()">
+        <main id="main" (click)="checkBlur()">
             <router-outlet (activate)="changeOfRoutes($event)"></router-outlet>
         </main>
     </div>

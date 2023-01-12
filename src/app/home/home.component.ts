@@ -14,11 +14,9 @@ export class HomeComponent {
     }
 
     seasonCycle(): void {
-        if (!Global.isBlurred()) {
-            Global.season++;
-            Global.season = Global.season % 4;
-            Global.setSeasonTheme();
-        }
+        Global.season++;
+        Global.season = Global.season % 4;
+        Global.setSeasonTheme();
     }
 
     onKeyEvent(route: string) {

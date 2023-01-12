@@ -12,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,10 @@ import { ContactComponent } from './contact/contact.component';
         BrowserModule,
         AppRoutingModule,
         FontAwesomeModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -31,18 +31,8 @@ export class SidenavComponent implements OnInit {
             Global.toggleNav();
         }
 
-        document.documentElement.setAttribute('data-theme', 'light');
-        if (localStorage.getItem('data-theme') === null) {
-            localStorage.setItem('data-theme', 'light');
-            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                Global.toggleTheme();
-            }
-        }
-        else {
-            if (localStorage.getItem('data-theme') === 'dark') {
-                Global.toggleTheme();
-            }
-        }
+        void (Global.light != null && Global.light.classList.toggle('show'));
+        void (Global.dark != null && Global.dark.classList.toggle('show'));
     }
 
     onKeyEvent(route: string) {
