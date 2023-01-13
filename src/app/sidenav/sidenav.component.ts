@@ -13,8 +13,7 @@ export class SidenavComponent implements OnInit {
     navItems: { title: string; icon: IconProp }[] = [
         { title: "Home", icon: "house"},
         { title: "About", icon: "user"},
-        { title: "Projects", icon: "list-check"},
-        { title: "Contact", icon: "message"}
+        { title: "Projects", icon: "list-check"}
     ];
 
     constructor(private router: Router,

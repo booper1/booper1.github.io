@@ -12,9 +12,10 @@
              (keydown.enter)="onKeyEvent(item.title)"
              (keydown.space)="onKeyEvent(item.title)"
              (click)="closeNav()"
-             [style.background-color]="currentPage(item.title) ? 'grey' : ''">
+             [style.background-color]="currentPage(item.title) ? 'grey' : ''"
+             [title]="item.title">
 
-            <div class="pageIcon"><fa-icon [icon]="item.icon" [title]="item.title"></fa-icon></div>
+            <div class="pageIcon"><fa-icon [icon]="item.icon"></fa-icon></div>
             <div class="pageTitle"><span>{{ item.title }}</span></div>
         </div>
     </div>

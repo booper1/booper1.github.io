@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,8 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
         HomeComponent,
         AboutComponent,
         SidenavComponent,
-        ProjectsComponent,
-        ContactComponent
+        ProjectsComponent
     ],
     imports: [
         BrowserModule,

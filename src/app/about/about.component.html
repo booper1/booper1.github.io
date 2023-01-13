@@ -1,33 +1,66 @@
 <div class="wrapper">
     <div class="primary">
-        <h1>
-            About Me
-        </h1>
-        <p>
-            I'm a computer science student with a background in engineering and robotics,
+        <div class="primaryContent">
+            <h1>
+                About Me
+            </h1>
+            <p>
+                I'm a computer science student with a background in engineering and robotics,
                 which helped me discover my love for problem-solving and STEM fields.
-            I have 8 months of software development internship experience,
+                I have 8 months of software development internship experience,
                 during which I contributed to the development of multiple internal web applications.
-        </p>
-        <p>
-            Problem-solving and creating high-quality products are my passions.
-            I have a strong dedication to seeing projects through to completion,
+            </p>
+            <p>
+                Problem-solving and creating high-quality products are my passions.
+                I have a strong dedication to seeing projects through to completion,
                 and I enjoy using my skills and knowledge to solve complex challenges.
-            My goal for after graduating is to work at an established company where I can feel invested in the work and valued as an individual.
-        </p>
-        <p>
-            In terms of my skills and experience,
+                My goal for after graduating is to work at an established company where I can feel invested in the work and valued as an individual.
+            </p>
+            <p>
+                In terms of my skills and experience,
                 I have a strong foundation in computer science and engineering principles.
-            Most of my professional experience is in Angular web apps paired with a .NET back-end platform.
-            That being said, I'm always open to new experiences and opportunities to learn new things.
-            Currently, I'm working on expanding my knowledge of front-end design and styling.
-        </p>
+                Most of my professional experience is in Angular web applications;
+                however, I'm always open to new experiences and opportunities to learn new things.
+                Currently, I'm working on expanding my knowledge of front-end design and styling.
+            </p>
+            <button class="seasonButton"
+                    [routerLink]="'../Projects'"
+                    (keydown.enter)="onKeyEvent('Projects')"
+                    (keydown.space)="onKeyEvent('Projects')"
+                    title="My Projects">
+                Learn About My Projects
+            </button>
+        </div>
     </div>
     <div class="secondary">
-        <img src="assets/cooperMedpace.png" alt="Cooper Baumgarth" title="Cooper Baumgarth">
-        <a class="seasonButton resume" href="assets/cooperBaumgarthResume2023.pdf" target="_blank">
-            View Resume
-            <fa-icon [icon]="['fas', 'file-pdf']" title="Resume"></fa-icon>
-        </a>
+        <div class="secondaryContent profile">
+            <img src="assets/cooperMedpace.png" alt="Cooper Baumgarth" title="Cooper Baumgarth">
+            <a class="seasonButton resume" href="assets/cooperBaumgarthResume2023.pdf" target="_blank" title="Resume">
+                View Resume
+                <fa-icon [icon]="['fas', 'file-pdf']"></fa-icon>
+            </a>
+        </div>
+        <div class="secondaryContent contact">
+            <hr />
+            <div id="infoGroup">
+                <div class="infoLine" title="Mobile Phone">
+                    <div class="infoIcon"><fa-icon [icon]="['fas', 'phone']"></fa-icon></div>
+                    <div class="infoTitle"><a href="tel:1-513-659-3006">(513) 659-3006</a></div>
+                </div>
+                <div class="infoLine" title="Email">
+                    <div class="infoIcon"><fa-icon [icon]="['fas', 'envelope']"></fa-icon></div>
+                    <div class="infoTitle"><a href="mailto:cooperbaumgarth@gmail.com">cooperbaumgarth&#8203;@gmail&#8203;.com </a></div>
+                </div>
+            </div>
+            <hr />
+            <div class="media">
+                <a href="https://www.linkedin.com/in/cooperbaumgarth/" target="_blank">
+                    <fa-icon [icon]="['fab', 'linkedin']" title="LinkedIn"></fa-icon>
+                </a>
+                <a href="https://github.com/booper1" target="_blank">
+                    <fa-icon [icon]="['fab', 'github']" title="GitHub"></fa-icon>
+                </a>
+            </div>
+        </div>
     </div>
 </div>

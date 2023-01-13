@@ -74,8 +74,8 @@
 
     #pageGroup {
         .page {
-            margin: var(--gap) var(--gap) var(--gap) var(--gap);
-            font-size: calc(var(--nav-icon-size) / 2);
+            margin: var(--gap);
+            font-size: 2rem;
             color: var(--theme-5);
             line-height: 2;
             letter-spacing: 0px;
@@ -110,7 +110,6 @@
                 cursor: pointer;
                 flex: 1 0 0%;
                 opacity: 100%;
-                font-size: calc(var(--nav-icon-size) / 2);
                 transition: all var(--transition-time) ease-in-out;
             }
         }

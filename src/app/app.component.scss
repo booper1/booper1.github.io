@@ -9,7 +9,7 @@ body {
 
         nav {
             flex: 0 0 auto;
-            height: 100%;
+            height: 100vh;
             transition: all var(--transition-time) ease-in-out;
             width: var(--nav-per);
             min-width: var(--nav-min);
@@ -19,13 +19,42 @@ body {
         main {
             color: var(--theme-3);
             flex: 1 0 0%;
-            padding: calc(var(--nav-icon-size) + 2 * var(--gap));
+            padding: 6rem;
             overflow: auto;
             transition: all var(--transition-time) ease-in-out;
         }
     }
 }
 
+@media (max-width: 1836px) {
+    body {
+        .wrapper {
+            main {
+                padding: 5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1624px) {
+    body {
+        .wrapper {
+            main {
+                padding: 4rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1412px) {
+    body {
+        .wrapper {
+            main {
+                padding: 3rem;
+            }
+        }
+    }
+}
 
 // Medium
 @media (max-width: 1200px) {

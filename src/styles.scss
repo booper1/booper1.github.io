@@ -1,11 +1,30 @@
+:root {
+    --gap: 1rem;
+    --nav-icon-size: 4rem;
+    --nav-per: 16%;
+    --nav-min: 16.5rem;
+    --nav-max: 23rem;
+    --transition-time: 300ms;
+    --theme-1: #808080; // Background
+    --theme-2: #808080; // Surface
+    --theme-3: #808080; // On Background
+    --theme-4: #808080; // On Surface Head
+    --theme-5: #808080; // On Surface Main
+    --theme-6: #0000008a; // Shadow Dark
+    --theme-7: #ffffff8a; // Shadow Light
+
+    --season-bg: #333333;
+    --season-1: #ffffff;
+    --season-2: #ffffff;
+    --season-3: #ffffff;
+}
+
 [data-theme="dark"] {
     --theme-1: #121212; // Background
     --theme-2: #323232; // Surface
     --theme-3: #d7d7d7; // On Background
     --theme-4: #a2a2a2; // On Surface Head
     --theme-5: #e2e2e2; // On Surface Main
-    --theme-6: #0000008a; // Shadow Dark
-    --theme-7: #ffffff8a; // Shadow Light
 }
 
 [data-theme="light"] {
@@ -14,8 +33,6 @@
     --theme-3: #282828; // On Background
     --theme-4: #5d5d5d; // On Surface Head
     --theme-5: #1d1d1d; // On Surface Main
-    --theme-6: #0000008a; // Shadow Dark
-    --theme-7: #ffffff8a; // Shadow Light
 }
 
 [season-theme="winter"] {
@@ -46,15 +63,6 @@
     --season-3: #4a7912;
 }
 
-:root {
-    --gap: 1rem;
-    --nav-icon-size: 60px;
-    --nav-per: 17vw;
-    --nav-min: 260px;
-    --nav-max: 360px;
-    --transition-time: 300ms;
-}
-
 .seasonText {
     color: var(--season-1);
     font-weight: bold;
@@ -70,18 +78,18 @@
     gap: var(--gap);
     border: none;
     background-color: var(--season-1);
-    border-radius: 17px;
+    border-radius: 1rem;
     color: rgba(0, 0, 0, 0.6);
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 6px;
+    padding: 0.4rem;
     cursor: pointer;
     text-decoration: none;
     transition: background-color var(--transition-time) ease-in-out,
                 color var(--transition-time) ease-in-out;
 
     &:active {
-        box-shadow: 0 3px var(--theme-2);
+        box-shadow: 0 0.2rem var(--theme-2);
         transform: translateY(3px);
     }
 
@@ -101,7 +109,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 1em;
+    width: 1rem;
 }
 
 ::-webkit-scrollbar-track {
