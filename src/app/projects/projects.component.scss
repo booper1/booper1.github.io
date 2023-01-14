@@ -1,12 +1,103 @@
-h1 {
-    text-align: center;
-    padding: 40px 0;
-    text-transform: uppercase;
-}
+.wrapper {
+    min-height: 100%;
+    //border: 1px red solid;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    gap: var(--gap);
 
-// Small
-@media (max-width: 576px) {
     h1 {
-        padding: initial;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .primary {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        gap: var(--gap);
+        flex-wrap: wrap;
+
+        .projectCard {
+            --p: calc(var(--gap) * 2);
+            max-width: 40ch;
+            height: 500px;
+            border-radius: 1rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding-top: 10rem;
+            position: relative;
+
+            .background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-size: cover;
+            }
+
+            &:hover {
+                transform: scale(1.01);
+            }
+
+            .projectContent {
+                z-index: 1;
+                padding: var(--p);
+                width: 100%;
+                color: #d7d7d7;
+                background: linear-gradient(to bottom, transparent 0%, #00000080 10%, #000000a0 20%, #000000 100%);
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: end;
+                gap: var(--gap);
+
+                .projectTitle {
+                    position: relative;
+                    width: max-content;
+                    max-width: 100%;
+                }
+
+                .projectTitle::after {
+                    content: '';
+                    position: absolute;
+                    height: 4px;
+                    left: calc(var(--p) * -1);
+                    bottom: -4px;
+                    width: 100%;
+                    background: var(--gradient);
+                }
+
+                a {
+                    color: rgba(0, 0, 0, 0.6);
+                }
+            }
+        }
+
+        .portfolio {
+            .background {
+                background-image: url(../../assets/portfolioBg.jpg);
+                filter: grayscale(1) brightness(60%);
+            }
+        }
+
+        .cipher {
+            .background {
+                background-image: url(../../assets/cryptographyBg.jpg);
+                background-position: -17.6rem 0;
+                filter: grayscale(1) brightness(90%);
+            }
+        }
+
+        .trainingTree {
+            .background {
+                background-image: url(../../assets/trainingTreeBg.jpg);
+                filter: grayscale(1) brightness(70%);
+            }
+        }
     }
 }

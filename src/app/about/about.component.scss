@@ -1,9 +1,7 @@
 .wrapper {
     display: flex;
-    flex-direction: row;
     align-self: start;
     justify-self: start;
-    display: flex;
     height: 100%;
     //background-color: red;
 
@@ -19,11 +17,19 @@
             height: 100%;
 
             h1 {
-                background-image: linear-gradient(45deg, var(--season-3) 10%, var(--season-2) 60%, var(--season-1) 90%);
-                background-repeat: no-repeat;
-                background-size: 100% 0.2em;
-                background-position: 0 110%;
-                width: fit-content;
+                position: relative;
+                width: max-content;
+                max-width: 100%;
+            }
+
+            h1::after {
+                content: '';
+                position: absolute;
+                height: 4px;
+                left: 0;
+                bottom: -4px;
+                width: 100%;
+                background: var(--gradient);
             }
 
             p {
@@ -152,8 +158,8 @@ a {
 // Medium
 @media (max-width: 1200px) {
     .wrapper {
-        flex-direction: column;
         gap: calc(var(--gap) * 2);
+        flex-direction: column;
         align-items: center;
         height: unset;
 
