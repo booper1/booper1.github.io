@@ -3,7 +3,7 @@
         My Projects
     </h1>
     <div class="primary">
-        <div class="projectCard portfolio">
+        <div class="projectCard portfolio" tabindex="0">
             <div class="background"></div>
             <div class="projectContent">
                 <h4 class="projectTitle">
@@ -16,7 +16,7 @@
                 </p>
             </div>
         </div>
-        <div class="projectCard cipher">
+        <div class="projectCard cipher" tabindex="0">
             <div class="background"></div>
             <div class="projectContent">
                 <h4 class="projectTitle">
@@ -26,12 +26,12 @@
                     I created this website for a project in a Crpytography class at NKU.
                     This sole purpose of this tool is to aid in enciphering and deciphering using the Running Key Cipher.
                 </p>
-                <a class="seasonButton" href="https://booper1.github.io/runningKeyTool/" target="_blank" title="Running Key Tool">
+                <button class="seasonButton" (click)="goToLink('https://booper1.github.io/runningKeyTool/')" target="_blank" title="Running Key Tool">
                     Check it out!
-                </a>
+                </button>
             </div>
         </div>
-        <div class="projectCard trainingTree">
+        <div class="projectCard trainingTree" tabindex="0">
             <div class="background"></div>
             <div class="projectContent">
                 <h4 class="projectTitle">
@@ -41,9 +41,9 @@
                     This was a 4-month project that I worked on during my time at Medpace.
                     The Training Tree application was the primary source for administrators to handle our internal learning management system.
                 </p>
-                <a class="seasonButton" href="#" target="_blank" title="Training Tree">
+                <button class="seasonButton" (click)="goToLink('/TrainingTree', false)" title="Training Tree">
                     Learn More
-                </a>
+                </button>
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@
     max-width: var(--nav-max);
     transition: all var(--transition-time) ease-in-out;
     z-index: 49;
-    box-shadow: 0px 0px 0.72em var(--theme-6);
+    box-shadow: 0px 0px 0.72em var(--shadow-dark);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,10 +31,12 @@
             transition: all calc(var(--transition-time) / 2) ease-in-out; // specify being strange
             background: var(--theme-4);
             display: none;
+            color: inherit;
+            border: none;
 
             &:hover {
                 transform: scale(1.1);
-                box-shadow: 0px 0px 0.72em var(--theme-6);
+                box-shadow: 0px 0px 0.72em var(--shadow-dark);
             }
 
             #topBun, #patty, #botBun {
@@ -73,6 +75,17 @@
     }
 
     #pageGroup {
+        hr {
+            width: calc(100% - var(--gap) * 2);
+            opacity: 1;
+            border: none;
+            height: 3px;
+            background-color: var(--theme-5);
+            margin: var(--gap);
+            border-radius: 3px;
+            transition: all var(--transition-time) ease-in-out;
+        }
+
         .page {
             margin: var(--gap);
             font-size: 2rem;
@@ -85,7 +98,7 @@
             border-radius: 5px;
 
             &:hover {
-                box-shadow: 0px 0px 0.5em var(--theme-6);
+                box-shadow: 0px 0px 0.5em var(--shadow-dark);
                 background: rgba(255, 255, 255, 0.1);
             }
 
@@ -122,6 +135,9 @@
         justify-content: center;
         font-size: calc(var(--nav-icon-size) * 2 / 3);
         color: var(--theme-5);
+        background: none;
+        padding: 0;
+        border: none;
 
         &:hover {
             transform: scale(1.1);
@@ -150,6 +166,7 @@
             .pageTitle {
                 opacity: 0%;
                 font-size: 0px;
+                padding: 0;
             }
         }
     }
@@ -170,7 +187,6 @@
 @media (max-width: 576px) {
     #navContent {
         left: 0px;
-        box-shadow: 0px 0px 0.72em var(--theme-6);
         width: var(--nav-per);
         min-width: var(--nav-min);
     }

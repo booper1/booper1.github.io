@@ -30,12 +30,15 @@ export class SidenavComponent implements OnInit {
             Global.toggleNav();
         }
 
-        void (Global.light != null && Global.light.classList.toggle('show'));
-        void (Global.dark != null && Global.dark.classList.toggle('show'));
+        if (document.documentElement.getAttribute('data-theme') !== 'light') {
+            void (Global.light != null && Global.light.classList.toggle('show'));
+            void (Global.dark != null && Global.dark.classList.toggle('show'));
+        }
     }
 
     onKeyEvent(route: string) {
         this.router.navigate([route], { relativeTo: this.route });
+        this.closeNav();
     }
 
     toggleNav(): void {

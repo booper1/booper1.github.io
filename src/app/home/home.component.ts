@@ -18,8 +18,4 @@ export class HomeComponent {
         Global.season = Global.season % 4;
         Global.setSeasonTheme();
     }
-
-    onKeyEvent(route: string) {
-        this.router.navigate([route], { relativeTo: this.route });
-    }
 }

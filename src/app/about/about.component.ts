@@ -11,11 +11,12 @@ export class AboutComponent {
         private route: ActivatedRoute) {
     }
 
-    goToLink(url: string) {
-        window.open(url, "_blank");
-    }
-
-    onKeyEvent(route: string) {
-        this.router.navigate([route], { relativeTo: this.route.root });
+    goToLink(url: string, newTab: boolean = true) {
+        if (newTab) {
+            window.open(url, "_blank");
+        }
+        else {
+            window.open(url, "_self");
+        }
     }
 }

@@ -1,0 +1,56 @@
+.wrapper {
+    display: flex;
+    align-self: start;
+    justify-self: start;
+    min-height: 100%;
+    //background-color: red;
+
+    .primary {
+        flex: 0 0 65%;
+        //background-color: green;
+
+        .primaryContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--gap);
+            height: 100%;
+
+            h1 {
+                position: relative;
+                width: max-content;
+                max-width: 100%;
+            }
+
+            h1::after {
+                content: '';
+                position: absolute;
+                height: 4px;
+                left: 0;
+                bottom: -4px;
+                width: 100%;
+                background: var(--gradient);
+            }
+
+            p {
+                font-size: 1.3rem;
+                max-width: 75ch;
+                margin-right: calc(2 * var(--gap));
+            }
+
+            button {
+                width: 20rem;
+            }
+        }
+    }
+}
+
+// Large
+@media (min-width: 2050px) {
+    .wrapper {
+        .primary {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

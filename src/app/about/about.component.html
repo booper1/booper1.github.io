@@ -25,8 +25,6 @@
             </p>
             <button class="seasonButton"
                     [routerLink]="'../Projects'"
-                    (keydown.enter)="onKeyEvent('Projects')"
-                    (keydown.space)="onKeyEvent('Projects')"
                     title="My Projects">
                 Learn About My Projects
             </button>
@@ -34,32 +32,44 @@
     </div>
     <div class="secondary">
         <div class="secondaryContent profile">
-            <img src="assets/cooperMedpace.png" alt="Cooper Baumgarth" title="Cooper Baumgarth">
-            <a class="seasonButton resume" href="assets/cooperBaumgarthResume2023.pdf" target="_blank" title="Resume">
+            <img src="assets/cooperMedpace.png" alt="Cooper Baumgarth" title="Cooper Baumgarth" tabindex="0">
+            <button class="seasonButton resume" (click)="goToLink('assets/cooperBaumgarthResume2023.pdf')" title="Resume">
                 View Resume
                 <fa-icon [icon]="['fas', 'file-pdf']"></fa-icon>
-            </a>
+            </button>
         </div>
         <div class="secondaryContent contact">
             <hr />
             <div id="infoGroup">
                 <div class="infoLine" title="Email">
-                    <div class="infoIcon"><fa-icon [icon]="['fas', 'envelope']"></fa-icon></div>
-                    <div class="infoTitle"><a href="mailto:cooperbaumgarth@gmail.com">cooperbaumgarth&#8203;@gmail&#8203;.com </a></div>
+                    <div class="infoIcon">
+                        <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+                    </div>
+                    <div class="infoTitle">
+                        <button (click)="goToLink('mailto:cooperbaumgarth@gmail.com', false)">
+                            cooperbaumgarth&#8203;@gmail&#8203;.com
+                        </button>
+                    </div>
                 </div>
                 <div class="infoLine" title="Mobile Phone">
-                    <div class="infoIcon"><fa-icon [icon]="['fas', 'phone']"></fa-icon></div>
-                    <div class="infoTitle"><a href="tel:1-513-659-3006">(513) 659-3006</a></div>
+                    <div class="infoIcon">
+                        <fa-icon [icon]="['fas', 'phone']"></fa-icon>
+                    </div>
+                    <div class="infoTitle">
+                        <button (click)="goToLink('tel:1-513-659-3006', false)">
+                            (513) 659-3006
+                        </button>
+                    </div>
                 </div>
             </div>
             <hr />
             <div class="media">
-                <a href="https://www.linkedin.com/in/cooperbaumgarth/" target="_blank">
+                <button (click)="goToLink('https://www.linkedin.com/in/cooperbaumgarth/')">
                     <fa-icon [icon]="['fab', 'linkedin']" title="LinkedIn"></fa-icon>
-                </a>
-                <a href="https://github.com/booper1" target="_blank">
+                </button>
+                <button (click)="goToLink('https://github.com/booper1')">
                     <fa-icon [icon]="['fab', 'github']" title="GitHub"></fa-icon>
-                </a>
+                </button>
             </div>
         </div>
     </div>

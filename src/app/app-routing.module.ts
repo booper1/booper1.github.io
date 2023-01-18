@@ -4,11 +4,13 @@ import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { Global } from './global';
 import { ProjectsComponent } from './projects/projects.component';
+import { TrainingTreeComponent } from './training-tree/training-tree.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, title: Global.author + "'s Homepage" },
     { path: 'About', component: AboutComponent, title: "About " + Global.author },
     { path: 'Projects', component: ProjectsComponent, title: Global.author + "'s Projects" },
+    { path: 'TrainingTree', component: TrainingTreeComponent, title: Global.author + "'s Projects" },
     { path: 'Home', redirectTo: '' }
 ];
 

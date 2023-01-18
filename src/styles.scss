@@ -6,10 +6,9 @@
     --nav-max: 23rem;
     --transition-time: 300ms;
     --gradient: linear-gradient(45deg, var(--season-3) 10%, var(--season-2) 60%, var(--season-1) 90%);
-
-    --theme-6: #0000008a; // Shadow Dark
-    --theme-7: #ffffff8a; // Shadow Light
-
+    --dark-3: #d7d7d7;
+    --shadow-dark: #0000008a;
+    --shadow-light: #ffffff8a;
     --season-bg: #333333;
     --season-1: #ffffff;
     --season-2: #ffffff;
@@ -22,6 +21,7 @@
     --theme-3: #d7d7d7; // On Background
     --theme-4: #a2a2a2; // On Surface Head
     --theme-5: #e2e2e2; // On Surface Main
+    --theme-shadow: var(--shadow-light); // Shadow
 }
 
 [data-theme="light"] {
@@ -30,6 +30,7 @@
     --theme-3: #282828; // On Background
     --theme-4: #5d5d5d; // On Surface Head
     --theme-5: #1d1d1d; // On Surface Main
+    --theme-shadow: var(--shadow-dark); // Shadow
 }
 
 [season-theme="winter"] {

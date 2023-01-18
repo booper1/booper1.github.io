@@ -13,6 +13,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TrainingTreeComponent } from './training-tree/training-tree.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
         HomeComponent,
         AboutComponent,
         SidenavComponent,
-        ProjectsComponent
+        ProjectsComponent,
+        TrainingTreeComponent
     ],
     imports: [
         BrowserModule,
