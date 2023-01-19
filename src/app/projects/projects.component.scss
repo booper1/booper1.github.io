@@ -26,6 +26,7 @@
             flex-direction: column;
             justify-content: flex-end;
             height: 500px;
+            width: 60vw;
             max-width: 40ch;
             padding-top: 10rem;
             overflow: hidden;
@@ -35,11 +36,6 @@
 
             &:hover, &:focus {
                 transform: translate(2px, -2px) scale(1.01);
-
-                .cardContent {
-                    padding-left: calc(var(--p) + 1px);
-                    padding-bottom: calc(var(--p) + 1px);
-                }
             }
 
             .background {
@@ -49,6 +45,7 @@
                 bottom: 0;
                 right: 0;
                 background-size: cover;
+                border-radius: 1rem;
                 transition: filter var(--transition-time) var(--transition-basic);
             }
 
@@ -59,7 +56,7 @@
                 padding: var(--p);
                 color: var(--dark-3);
                 background: linear-gradient(to bottom, transparent 0%, #0008 10%, #000a 20%, #000 100%);
-                transition: padding var(--transition-time) var(--transition-hover-focus);
+                border-radius: 0 0 1rem 1rem;
                 z-index: 1;
 
                 .projectTitle {

@@ -11,7 +11,8 @@ const routes: Routes = [
     { path: 'About', component: AboutComponent, title: "About " + stateManager.author },
     { path: 'Projects', component: ProjectsComponent, title: stateManager.author + "'s Projects" },
     { path: 'TrainingTree', component: TrainingTreeComponent, title: stateManager.author + "'s Projects" },
-    { path: 'Home', redirectTo: '' }
+    { path: 'Home', redirectTo: '' },
+    { path: '**', redirectTo: '' }
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'});
