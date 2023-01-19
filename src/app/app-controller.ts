@@ -1,14 +1,14 @@
 export class stateManager {
-    public static author: string = "Booper_1";
+    public static author: string = "Cooper";
 
     public static burger: HTMLElement | null;
     public static navContent: HTMLElement | null;
     public static main: HTMLElement | null;
     public static light: HTMLElement | null;
     public static dark: HTMLElement | null;
+
     public static navOpen: boolean = true;
     public static season: number = -1;
-
     public static page: string = "";
 
     public static toggleNav(): void {
