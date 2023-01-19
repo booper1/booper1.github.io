@@ -1,30 +1,30 @@
 body {
     background-color: var(--theme-1);
-    transition: all var(--transition-time) ease-in-out;
     overflow: hidden;
+    transition: all var(--transition-time) var(--transition-basic);
 
     .wrapper {
+        display: flex;
         height: 100vh;
         height: -moz-available;
         height: -webkit-fill-available;
-        height: fill-available;
-        display: flex;
+        height: stretch;
 
         nav {
             flex: 0 0 auto;
             height: 100vh;
-            transition: all var(--transition-time) ease-in-out;
             width: var(--nav-per);
             min-width: var(--nav-min);
             max-width: var(--nav-max);
+            transition: all var(--transition-time) var(--transition-basic);
         }
 
         main {
-            color: var(--theme-3);
             flex: 1 0 0%;
             padding: 6rem;
             overflow: auto;
-            transition: all var(--transition-time) ease-in-out;
+            color: var(--theme-3);
+            transition: all var(--transition-time) var(--transition-basic);
         }
     }
 }
@@ -64,24 +64,28 @@ body {
     body {
         .wrapper {
             nav {
-                width: calc(var(--nav-icon-size) + 2 * var(--gap));
-                min-width: calc(var(--nav-icon-size) + 2 * var(--gap));
+                width: var(--icon-gap);
+                min-width: var(--icon-gap);
                 max-width: none;
             }
 
             main {
-                padding: calc(var(--nav-icon-size) + 2 * var(--gap)) calc(2 * var(--gap));
+                padding: var(--icon-gap) var(--gap-2);
             }
 
             main.blur {
                 filter: blur(2px);
+
+                .net {
+                    pointer-events: none;
+                }
             }
         }
     }
 }
 
 // Small
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     body {
         .wrapper {
             nav {

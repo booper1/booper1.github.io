@@ -3,54 +3,79 @@
     align-self: start;
     justify-self: start;
     min-height: 100%;
-    //background-color: red;
 
     .primary {
-        flex: 0 0 65%;
-        //background-color: green;
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 100%;
+
+        h1 {
+            position: relative;
+            width: max-content;
+            max-width: 100%;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            height: 4px;
+            width: 100%;
+            background: var(--gradient);
+        }
 
         .primaryContent {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: var(--gap);
-            height: 100%;
-
-            h1 {
-                position: relative;
-                width: max-content;
-                max-width: 100%;
-            }
-
-            h1::after {
-                content: '';
-                position: absolute;
-                height: 4px;
-                left: 0;
-                bottom: -4px;
-                width: 100%;
-                background: var(--gradient);
-            }
+            margin: var(--gap) 0;
+            column-count: 2;
 
             p {
-                font-size: 1.3rem;
+                --size: 1.1rem;
                 max-width: 75ch;
-                margin-right: calc(2 * var(--gap));
+                margin-bottom: calc(var(--size) * 1.5);
+                margin-right: var(--gap-2);
+                font-size: var(--size);
+                text-indent: 3ch;
             }
+        }
 
-            button {
-                width: 20rem;
-            }
+        img {
+            width: 1100px;
+            max-width: 100%;
+            margin: 0 auto;
+            filter: var(--invert);
+            box-shadow: -3px 3px 0.5em var(--shadow-dark);
+            transition: filter var(--transition-time) var(--transition-basic);
         }
     }
 }
-
 // Large
 @media (min-width: 2050px) {
     .wrapper {
+        justify-content: center;
+    }
+}
+
+// Medium
+@media (max-width: 1200px) {
+    .wrapper {
         .primary {
-            display: flex;
-            justify-content: center;
+            h1 {
+                margin: auto;
+            }
+
+            .primaryContent {
+                flex-direction: column;
+                align-items: center;
+                column-count: 1;
+
+                p {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
         }
     }
 }

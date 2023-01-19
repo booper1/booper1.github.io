@@ -1,18 +1,19 @@
 :root {
     --gap: 1rem;
-    --nav-icon-size: 4rem;
+    --gap-2: calc(2 * var(--gap));
+    --gap-3: calc(3 * var(--gap));
+    --icon-base: 4rem;
+    --icon-gap: calc(var(--icon-base) + var(--gap-2));
     --nav-per: 16%;
     --nav-min: 16.5rem;
     --nav-max: 23rem;
     --transition-time: 300ms;
+    --transition-basic: ease-in-out;
+    --transition-hover-focus: ease;
     --gradient: linear-gradient(45deg, var(--season-3) 10%, var(--season-2) 60%, var(--season-1) 90%);
     --dark-3: #d7d7d7;
     --shadow-dark: #0000008a;
     --shadow-light: #ffffff8a;
-    --season-bg: #333333;
-    --season-1: #ffffff;
-    --season-2: #ffffff;
-    --season-3: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -22,6 +23,8 @@
     --theme-4: #a2a2a2; // On Surface Head
     --theme-5: #e2e2e2; // On Surface Main
     --theme-shadow: var(--shadow-light); // Shadow
+    --invert: invert(1);
+    --brightness: 10%;
 }
 
 [data-theme="light"] {
@@ -31,6 +34,8 @@
     --theme-4: #5d5d5d; // On Surface Head
     --theme-5: #1d1d1d; // On Surface Main
     --theme-shadow: var(--shadow-dark); // Shadow
+    --invert: invert(0);
+    --brightness: 15%;
 }
 
 [season-theme="winter"] {
@@ -61,33 +66,26 @@
     --season-3: #4a7912;
 }
 
-.seasonText {
-    color: var(--season-1);
-    font-weight: bold;
-    text-shadow: -0.5px 0.5px var(--theme-3);
-    transition: color var(--transition-time) ease-in-out,
-                text-shadow var(--transition-time) ease-in-out;
-}
-
 .seasonButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap);
     border: none;
     background-color: var(--season-1);
     border-radius: 1rem;
     color: rgba(0, 0, 0, 0.6);
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 0.4rem;
+    width: fit-content;
+    padding: 0.4rem 2.5rem;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color var(--transition-time) ease-in-out,
-                color var(--transition-time) ease-in-out;
+    filter: brightness(calc(40% + var(--brightness) * 5));
+    transition: background-color var(--transition-time) var(--transition-hover-focus), color var(--transition-time) var(--transition-basic), filter var(--transition-time) var(--transition-basic);
+
+    &:hover, &:focus {
+        background-color: var(--season-3);
+    }
 
     &:active {
-        box-shadow: 0 0.2rem var(--theme-2);
+        box-shadow: 0 0.2rem 0 grey;
         transform: translateY(3px);
     }
 
@@ -113,7 +111,7 @@
 ::-webkit-scrollbar-track {
     background: var(--theme-2);
     border-radius: 0.5em;
-    box-shadow: inset 0 0 0.5em rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 0.5em var(--shadow-dark);
 }
 
 ::-webkit-scrollbar-thumb {

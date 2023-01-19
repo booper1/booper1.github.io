@@ -1,39 +1,33 @@
 <div class="wrapper">
     <div class="primary">
+        <h1>
+            Training Tree
+        </h1>
         <div class="primaryContent">
-            <h1>
-                Training Tree Coming Soon
-            </h1>
             <p>
-                About This Project:
-                The Training Tree web application was built to allow for easy viewing and altering of company training materials.
-                The app allows for the user to select what training contents, or groups of content, to view.
-                The user can then edit contents and construct their own groups.
+                The Training Tree application is the primary source for administrators to handle the internal learning management system,
+                allowing for easy viewing and altering of company training materials.
+                With only about 1 month of experience, my assignment was to optimize the existing application.
             </p>
             <p>
-                Backstory:
-                The previous Training Tree app was designed many years ago, back when the training system was just starting.
-                Due to this, the page would routinely take over a minute of loading, and still end up broken, due to it's loading method.
-                The page would load all training data on page load, which creates many problems now that the database of training contents is much larger.
+                The previous Training Tree app was designed 3 years prior, back when the training system had been just starting.
+                The primary issue was that the original app was not designed to scale with the database, which resulted in very long load times.
+                The app called for all training data on page load,
+                which was problematic since the database of training content had grown exponentially over those 3 years.
             </p>
             <p>
-                End Result:
-                This web page has now been completely rewritten along with new features, such as dropdown lists and search functionality,
-                allowing for a better user experience.
-                Thanks to the lazy loading hierarchy structure, the page now loads all data quickly for the user.
-                The page is still gathering it’s final approvals, but initial impressions from many users indicate that this page
-                has massively improved from what they had in the past.
-                All in all, after much time and effort, this page rework has been a great learning experience for me,
-                as well as a large improvement for the users.
+                Going into the project, my primary task was implementing lazy loading of the training data, as well as to remove numerous outdated functions.
+                Since so much of the app was being discarded, it was decided that I may as well rebuild the app from the ground up.
+                This was in the hope that the final product would have much cleaner code, and that I would gain a greater knowledge of the system.
+                After roughly 1.5 months I finally brought the app fully back to life, reducing the load time by approximately 90%.
             </p>
             <p>
-                Technologies:
-                The back end of our system was built with C#, providing important logic and maintaining consistency of data.
-                The front end of our system was built with HTML, CSS, and Typescript, using the Angular framework.
-                This enables us to create a pleasant and effective user interface.
+                Subsequently, it was decided that since the app was being rebuilt, it might as well be given some improvements.
+                Unfortunately, that decision was made following much of the rebuild and ultimately resulted in yet <i>another</i> rebuild.
+                Thus, the ensuing 2.5 months was spent communicating with the learning management system's admins to implement numerous features
+                such as dropdown lists, search functionality, and live change detection. The following image is of the resulting application.
             </p>
-            <!-- Angular Icon: shorturl.at/AHLRX -->
-            <!-- C# Icon: shorturl.at/blrt3 -->
         </div>
+        <img alt="Training Tree Final Result" src="assets/trainingTreeResult.png" title="Training Tree Final Result">
     </div>
 </div>

@@ -1,6 +1,6 @@
 <div id="navContent">
     <div class="navAction">
-        <button id="burger" class="cross" (click)="toggleNav()" tabindex="1">
+        <button id="burger" class="cross" tabindex="1" (click)="toggleNav()">
             <div id="topBun"></div>
             <div id="patty"></div>
             <div id="botBun"></div>
@@ -9,10 +9,10 @@
     <div id="pageGroup">
         <hr />
         <div class="page" *ngFor="let item of navItems"
-             [routerLink]="[item.title]"
+             (click)="closeNav()"
              (keydown.enter)="onKeyEvent(item.title)"
              (keydown.space)="onKeyEvent(item.title)"
-             (click)="closeNav()"
+             [routerLink]="[item.title]"
              [style.background-color]="currentPage(item.title) ? 'grey' : ''"
              [title]="item.title">
 
@@ -21,8 +21,8 @@
         </div>
         <hr />
     </div>
-    <button class="navAction navTheme" (click)="toggleTheme()" title="Theme Toggle">
-        <fa-icon [icon]="['fas', 'sun']" class="theme show" id="light"></fa-icon>
-        <fa-icon [icon]="['fas', 'moon']" class="theme" id="dark"></fa-icon>
+    <button class="navAction navTheme" title="Theme Toggle" (click)="toggleTheme()">
+        <fa-icon id="light" class="themeIcon show" [icon]="['fas', 'sun']"></fa-icon>
+        <fa-icon id="dark" class="themeIcon" [icon]="['fas', 'moon']"></fa-icon>
     </button>
 </div>

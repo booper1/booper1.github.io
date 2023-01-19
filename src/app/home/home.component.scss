@@ -11,35 +11,42 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-right: var(--gap);
             gap: var(--gap);
+            padding-right: var(--gap);
 
             p {
                 font-size: 1.5rem;
             }
 
             button {
-                width: 12.5rem;
+                width: fit-content;
+            }
+
+            .seasonText {
+                color: var(--season-1);
+                font-weight: bold;
+                text-shadow: -0.5px 0.5px var(--theme-3);
+                transition: color var(--transition-time) var(--transition-hover-focus), text-shadow var(--transition-time) var(--transition-hover-focus);
             }
         }
     }
 
     .secondary {
         flex: 0 0 35%;
-        flex-direction: column;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
 
         svg {
-            width: 13vw;
+            width: 12.5vw;
             max-width: var(--nav-min);
+            border: none;
             border-radius: 17%;
             cursor: pointer;
-            border: none;
 
             stop, rect {
-                transition: stop-color var(--transition-time) ease-in-out, fill var(--transition-time) ease-in-out;
+                transition: stop-color var(--transition-time) var(--transition-hover-focus), fill var(--transition-time) var(--transition-hover-focus);
             }
         }
     }
@@ -73,10 +80,10 @@
 
             svg {
                 position: absolute;
-                height: var(--nav-icon-size);
-                width: var(--nav-icon-size);
                 top: var(--gap);
                 right: var(--gap);
+                height: var(--icon-base);
+                width: var(--icon-base);
             }
         }
     }

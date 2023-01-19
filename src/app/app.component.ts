@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Global } from './global';
+import { stateManager } from './app-controller';
 
 @Component({
     selector: 'app-root',
@@ -12,51 +12,51 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        Global.main = document.getElementById("main");
+        stateManager.main = document.getElementById("main");
 
         const d = new Date();
         let month = d.getMonth();
-        Global.season = Math.floor(((month + 1) % 12) / 3);
+        stateManager.season = Math.floor(((month + 1) % 12) / 3);
 
-        Global.setSeasonTheme();
+        stateManager.setSeasonTheme();
 
         document.documentElement.setAttribute('data-theme', 'light');
         if (localStorage.getItem('data-theme') === null) {
             localStorage.setItem('data-theme', 'light');
             if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                Global.toggleTheme();
+                stateManager.toggleTheme();
             }
         }
         else {
             if (localStorage.getItem('data-theme') === 'dark') {
-                Global.toggleTheme();
+                stateManager.toggleTheme();
             }
         }
     }
 
     toggleNav(): void {
-        Global.toggleNav();
+        stateManager.toggleNav();
     }
 
     checkBlur(): void {
-        if (Global.main?.classList.contains("blur")) {
-            Global.toggleNav();
+        if (stateManager.main?.classList.contains("blur")) {
+            stateManager.toggleNav();
         }
     }
 
     changeOfRoutes(event: any): void {
-        Global.page = this.router.url.substring(1);
-        if (Global.page === "") {
-            Global.page = "home";
+        stateManager.page = this.router.url.substring(1);
+        if (stateManager.page === "") {
+            stateManager.page = "home";
         }
     }
 
     onResize(event: any): void {
-        if (Global.navOpen && window.matchMedia("(max-width: 1200px)").matches) {
-            Global.toggleNav();
+        if (stateManager.navOpen && window.matchMedia("(max-width: 1200px)").matches) {
+            stateManager.toggleNav();
         }
-        else if (!Global.navOpen && !window.matchMedia("(max-width: 1200px)").matches) {
-            Global.toggleNav();
+        else if (!stateManager.navOpen && !window.matchMedia("(max-width: 1200px)").matches) {
+            stateManager.toggleNav();
         }
     }
 }

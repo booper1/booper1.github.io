@@ -4,7 +4,9 @@
             <app-sidenav></app-sidenav>
         </nav>
         <main id="main" (click)="checkBlur()">
-            <router-outlet (activate)="changeOfRoutes($event)"></router-outlet>
+            <div class="net">
+                <router-outlet (activate)="changeOfRoutes($event)"></router-outlet>
+            </div>
         </main>
     </div>
 </body>

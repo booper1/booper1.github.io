@@ -1,66 +1,66 @@
 .wrapper {
-    min-height: 100%;
-    //border: 1px red solid;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     gap: var(--gap);
+    min-height: 100%;
 
     h1 {
         text-align: center;
         text-transform: uppercase;
     }
 
-    .primary {
+    .deck {
         display: flex;
+        flex-wrap: wrap;
         align-content: center;
         justify-content: center;
-        gap: calc(var(--gap) * 3);
-        row-gap: calc(var(--gap) * 2);
-        flex-wrap: wrap;
+        gap: var(--gap-3);
+        row-gap: var(--gap-2);
 
         .projectCard {
-            --p: calc(var(--gap) * 2);
-            max-width: 40ch;
-            height: 500px;
-            border-radius: 1rem;
-            overflow: hidden;
+            --p: var(--gap-2);
+            position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: end;
+            justify-content: flex-end;
+            height: 500px;
+            max-width: 40ch;
             padding-top: 10rem;
-            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
             box-shadow: -3px 3px 0.5em var(--theme-shadow);
-            transition: box-shadow var(--transition-time) ease-in-out, transform var(--transition-time) ease;
-
-            .background {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-size: cover;
-            }
+            transition: box-shadow var(--transition-time) var(--transition-basic), transform var(--transition-time) var(--transition-hover-focus);
 
             &:hover, &:focus {
                 transform: translate(2px, -2px) scale(1.01);
 
-                .projectContent {
+                .cardContent {
                     padding-left: calc(var(--p) + 1px);
                     padding-bottom: calc(var(--p) + 1px);
                 }
             }
 
-            .projectContent {
-                transition: padding var(--transition-time) ease;
-                z-index: 1;
-                padding: var(--p);
-                color: #d7d7d7;
-                background: linear-gradient(to bottom, transparent 0%, #00000080 10%, #000000a0 20%, #000000 100%);
+            .background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-size: cover;
+                transition: filter var(--transition-time) var(--transition-basic);
+            }
+
+            .cardContent {
                 display: flex;
                 flex-direction: column;
                 gap: var(--gap);
+                padding: var(--p);
+                color: var(--dark-3);
+                background: linear-gradient(to bottom, transparent 0%, #0008 10%, #000a 20%, #000 100%);
+                transition: padding var(--transition-time) var(--transition-hover-focus);
+                z-index: 1;
 
                 .projectTitle {
                     position: relative;
@@ -71,15 +71,16 @@
                 .projectTitle::after {
                     content: '';
                     position: absolute;
-                    height: 4px;
                     left: calc(var(--p) * -1);
                     bottom: -4px;
+                    height: 4px;
                     width: 100%;
                     background: var(--gradient);
                 }
 
-                button, a {
-                    color: rgba(0, 0, 0, 0.6);
+                button {
+                    width: 100%;
+                    padding: inherit 0;
                 }
             }
         }
@@ -87,7 +88,7 @@
         .portfolio {
             .background {
                 background-image: url(../../assets/portfolioBg.jpg);
-                filter: grayscale(1) brightness(60%);
+                filter: grayscale(1) brightness(calc(var(--brightness) * 6));
             }
         }
 
@@ -95,14 +96,14 @@
             .background {
                 background-image: url(../../assets/cryptographyBg.jpg);
                 background-position: -17.6rem 0;
-                filter: grayscale(1) brightness(90%);
+                filter: grayscale(1) brightness(calc(var(--brightness) * 9));
             }
         }
 
         .trainingTree {
             .background {
                 background-image: url(../../assets/trainingTreeBg.jpg);
-                filter: grayscale(1) brightness(70%);
+                filter: grayscale(1) brightness(calc(var(--brightness) * 7));
             }
         }
     }

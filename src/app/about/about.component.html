@@ -23,22 +23,20 @@
                 however, I'm always open to new experiences and opportunities to learn new things.
                 Currently, I'm working on expanding my knowledge of front-end design and styling.
             </p>
-            <button class="seasonButton"
-                    [routerLink]="'../Projects'"
-                    title="My Projects">
+            <button class="seasonButton" title="My Projects" [routerLink]="'../Projects'">
                 Learn About My Projects
             </button>
         </div>
     </div>
     <div class="secondary">
-        <div class="secondaryContent profile">
-            <img src="assets/cooperMedpace.png" alt="Cooper Baumgarth" title="Cooper Baumgarth" tabindex="0">
-            <button class="seasonButton resume" (click)="goToLink('assets/cooperBaumgarthResume2023.pdf')" title="Resume">
+        <div class="secondaryContent">
+            <img alt="Cooper Baumgarth" src="assets/cooperMedpace.png" tabindex="0" title="Cooper Baumgarth">
+            <button class="seasonButton resume" title="Resume" (click)="goToLink('assets/cooperBaumgarthResume2023.pdf')">
                 View Resume
                 <fa-icon [icon]="['fas', 'file-pdf']"></fa-icon>
             </button>
         </div>
-        <div class="secondaryContent contact">
+        <div class="secondaryContent">
             <hr />
             <div id="infoGroup">
                 <div class="infoLine" title="Email">
@@ -47,7 +45,7 @@
                     </div>
                     <div class="infoTitle">
                         <button (click)="goToLink('mailto:cooperbaumgarth@gmail.com', false)">
-                            cooperbaumgarth&#8203;@gmail&#8203;.com
+                            cooperbaumgarth&#8203;@gmail.com
                         </button>
                     </div>
                 </div>
@@ -65,10 +63,10 @@
             <hr />
             <div class="media">
                 <button (click)="goToLink('https://www.linkedin.com/in/cooperbaumgarth/')">
-                    <fa-icon [icon]="['fab', 'linkedin']" title="LinkedIn"></fa-icon>
+                    <fa-icon title="LinkedIn" [icon]="['fab', 'linkedin']"></fa-icon>
                 </button>
                 <button (click)="goToLink('https://github.com/booper1')">
-                    <fa-icon [icon]="['fab', 'github']" title="GitHub"></fa-icon>
+                    <fa-icon title="GitHub" [icon]="['fab', 'github']"></fa-icon>
                 </button>
             </div>
         </div>

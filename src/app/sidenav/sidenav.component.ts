@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { Global } from '../global';
+import { stateManager } from '../app-controller';
 
 @Component({
   selector: 'app-sidenav',
@@ -17,22 +17,22 @@ export class SidenavComponent implements OnInit {
     ];
 
     constructor(private router: Router,
-                private route: ActivatedRoute) {
+        private route: ActivatedRoute) {
     }
 
     ngOnInit(): void {
-        Global.burger = document.getElementById("burger");
-        Global.navContent = document.getElementById("navContent");
-        Global.light = document.getElementById("light");
-        Global.dark = document.getElementById("dark");
+        stateManager.burger = document.getElementById("burger");
+        stateManager.navContent = document.getElementById("navContent");
+        stateManager.light = document.getElementById("light");
+        stateManager.dark = document.getElementById("dark");
 
         if (window.matchMedia("(max-width: 1200px)").matches) {
-            Global.toggleNav();
+            stateManager.toggleNav();
         }
 
         if (document.documentElement.getAttribute('data-theme') !== 'light') {
-            void (Global.light != null && Global.light.classList.toggle('show'));
-            void (Global.dark != null && Global.dark.classList.toggle('show'));
+            void (stateManager.light != null && stateManager.light.classList.toggle('show'));
+            void (stateManager.dark != null && stateManager.dark.classList.toggle('show'));
         }
     }
 
@@ -42,20 +42,20 @@ export class SidenavComponent implements OnInit {
     }
 
     toggleNav(): void {
-        Global.toggleNav();
+        stateManager.toggleNav();
     }
 
     closeNav(): void {
-        if (Global.navOpen && window.matchMedia("(max-width: 1200px)").matches) {
-            Global.toggleNav();
+        if (stateManager.navOpen && window.matchMedia("(max-width: 1200px)").matches) {
+            stateManager.toggleNav();
         }
     }
 
     toggleTheme(): void {
-        Global.toggleTheme();
+        stateManager.toggleTheme();
     }
 
     currentPage(navItemTitle: string): boolean {
-        return navItemTitle.toLowerCase() === Global.page.toLowerCase() ? true : false;
+        return navItemTitle.toLowerCase() === stateManager.page.toLowerCase() ? true : false;
     }
 }

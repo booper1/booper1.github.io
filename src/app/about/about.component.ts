@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { stateManager } from '../app-controller';
 
 @Component({
     selector: 'app-about',
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
-    constructor(private router: Router,
-        private route: ActivatedRoute) {
+export class AboutComponent implements OnInit {
+    ngOnInit(): void {
+        if (stateManager.main != null) {
+            stateManager.main.scrollTop = 0;
+        }
     }
 
     goToLink(url: string, newTab: boolean = true) {

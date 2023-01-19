@@ -1,4 +1,4 @@
-export class Global {
+export class stateManager {
     public static author: string = "Booper_1";
 
     public static burger: HTMLElement | null;
@@ -8,22 +8,21 @@ export class Global {
     public static dark: HTMLElement | null;
     public static navOpen: boolean = true;
     public static season: number = -1;
-    public static root: any = document.querySelector(':root');
 
     public static page: string = "";
 
     public static toggleNav(): void {
-        void (Global.burger != null && Global.burger.classList.toggle('cross'));
-        void (Global.navContent != null && Global.navContent.classList.toggle('hide'));
-        Global.navOpen = !Global.navOpen;
+        void (this.burger != null && this.burger.classList.toggle('cross'));
+        void (this.navContent != null && this.navContent.classList.toggle('hide'));
+        this.navOpen = !this.navOpen;
 
-        Global.main?.classList.remove('blur');
-        void (Global.main != null && Global.navOpen && window.matchMedia("(max-width: 1200px)").matches && Global.main.classList.add('blur'));
+        this.main?.classList.remove('blur');
+        void (this.main != null && this.navOpen && window.matchMedia("(max-width: 1200px)").matches && this.main.classList.add('blur'));
     }
 
     public static toggleTheme(): void {
-        void (Global.light != null && Global.light.classList.toggle('show'));
-        void (Global.dark != null && Global.dark.classList.toggle('show'));
+        void (this.light != null && this.light.classList.toggle('show'));
+        void (this.dark != null && this.dark.classList.toggle('show'));
 
         if (document.documentElement.getAttribute('data-theme') !== 'light') {
             document.documentElement.setAttribute('data-theme', 'light');

@@ -2,12 +2,11 @@
     display: flex;
     align-self: start;
     justify-self: start;
+    row-gap: var(--gap-3);
     min-height: 100%;
-    //background-color: red;
 
     .primary {
         flex: 0 0 65%;
-        //background-color: green;
 
         .primaryContent {
             display: flex;
@@ -25,51 +24,42 @@
             h1::after {
                 content: '';
                 position: absolute;
-                height: 4px;
                 left: 0;
                 bottom: -4px;
+                height: 4px;
                 width: 100%;
                 background: var(--gradient);
             }
 
             p {
-                font-size: 1.4rem;
                 max-width: 75ch;
-                margin-right: calc(2 * var(--gap));
-            }
-
-            button {
-                width: 20rem;
+                margin-right: var(--gap-2);
+                font-size: 1.4rem;
             }
         }
     }
 
     .secondary {
         flex: 0 0 35%;
-        flex-direction: column;
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         gap: var(--gap);
-        //background-color: blue;
-
-        .profile {
-            gap: var(--gap);
-        }
 
         .secondaryContent {
+            --image-size: 250px;
             display: flex;
             flex-direction: column;
-            //background-color: green;
 
             img {
-                filter: grayscale(1);
+                height: var(--image-size);
+                width: var(--image-size);
+                margin: 0 var(--gap) var(--gap);
                 border-radius: 1rem;
+                filter: grayscale(1);
                 user-select: none;
-                margin: 0 var(--gap);
-                width: 250px;
-                height: 250px;
 
                 &:hover, &:focus {
                     filter: grayscale(0);
@@ -78,9 +68,13 @@
             }
 
             .resume {
-                width: 250px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: var(--gap);
+                width: var(--image-size);
                 margin: 0 var(--gap);
-                color: rgba(0, 0, 0, 0.6);
+                padding: inherit 0;
             }
 
             #infoGroup {
@@ -95,69 +89,66 @@
                     justify-content: center;
 
                     .infoIcon {
-                        height: calc(var(--nav-icon-size) * 3 / 4);
-                        width: calc(var(--nav-icon-size) * 3 / 4);
                         flex: 0 0 auto;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        font-size: calc(var(--nav-icon-size) / 2);
+                        height: calc(var(--icon-base) * 0.75);
+                        width: calc(var(--icon-base) * 0.75);
+                        font-size: calc(var(--icon-base) / 2);
                     }
 
                     .infoTitle {
+                        flex: 1 0 0%;
                         display: flex;
                         align-items: center;
                         justify-content: left;
-                        height: var(--nav-icon-size);
-                        flex: 1 0 0%;
+                        height: var(--icon-base);
                         padding-left: var(--gap);
 
                         button {
-                            text-transform: uppercase;
-                            background: none;
-                            color: inherit;
-                            border: none;
                             padding: 0;
+                            color: inherit;
+                            background: none;
+                            text-align: left;
+                            text-transform: uppercase;
+                            border: none;
                         }
                     }
                 }
             }
 
             hr {
-                width: 100%;
+                --height: 3px;
+                height: var(--height);
+                margin: 0.5rem 0;
+                background-image: var(--gradient);
                 opacity: 1;
                 border: none;
-                height: 3px;
-                background-image: linear-gradient(45deg, var(--season-3) 10%, var(--season-2) 60%, var(--season-1) 90%);
-                margin: 0.5rem 0;
+                border-radius: var(--height);
             }
 
             .media {
-                margin: var(--gap) 0;
-                font-size: calc(var(--nav-icon-size) * 2 / 3);
-                width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
+                margin: var(--gap) 0;
+                font-size: calc(var(--icon-base) * 0.75);
 
                 button {
+                    padding: 0;
                     background: none;
                     color: inherit;
                     border: none;
-                    padding: 0;
+                    transition: transform var(--transition-time) var(--transition-hover-focus);
 
                     &:hover, &:focus {
-                        transform: scale(1.1);
+                        transform: translate(0px, -2px) scale(1.1);
                     }
                 }
             }
         }
     }
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
 }
 
 // Large
@@ -173,10 +164,8 @@ a {
 // Medium
 @media (max-width: 1200px) {
     .wrapper {
-        gap: calc(var(--gap) * 2);
         flex-direction: column;
         align-items: center;
-        height: unset;
 
         .primary {
             .primaryContent {
@@ -195,12 +184,13 @@ a {
         }
 
         .resume {
-            margin: calc(var(--gap) * 2);
+            margin: var(--gap-2);
         }
     }
 }
+
 // Small
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     .wrapper {
         display: flex;
         align-items: center;
