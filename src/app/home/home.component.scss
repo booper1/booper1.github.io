@@ -25,7 +25,7 @@
             .seasonText {
                 color: var(--season-1);
                 font-weight: bold;
-                text-shadow: -0.5px 0.5px var(--theme-3);
+                text-shadow: -1px 1px var(--theme-3);
                 transition: color var(--transition-time) var(--transition-hover-focus), text-shadow var(--transition-time) var(--transition-hover-focus);
             }
         }

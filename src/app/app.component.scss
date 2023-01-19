@@ -1,7 +1,6 @@
 body {
-    background-color: var(--theme-1);
+    background-color: grey;
     overflow: hidden;
-    transition: all var(--transition-time) var(--transition-basic);
 
     .wrapper {
         display: flex;
@@ -9,6 +8,8 @@ body {
         height: -moz-available;
         height: -webkit-fill-available;
         height: stretch;
+        background-color: var(--theme-1);
+        transition: all var(--transition-time) var(--transition-basic);
 
         nav {
             flex: 0 0 auto;
