@@ -26,7 +26,6 @@
             flex-direction: column;
             justify-content: flex-end;
             height: 500px;
-            width: 60vw;
             max-width: 40ch;
             padding-top: 10rem;
             overflow: hidden;
@@ -101,6 +100,19 @@
             .background {
                 background-image: url(../../assets/trainingTreeBg.jpg);
                 filter: grayscale(1) brightness(calc(var(--brightness) * 7));
+            }
+        }
+    }
+}
+
+// Small
+@media (max-width: 600px), (max-height: 450px) {
+    .wrapper {
+        .deck {
+            .projectCard {
+                &:hover, &:focus {
+                    transform: none;
+                }
             }
         }
     }
