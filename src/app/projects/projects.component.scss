@@ -102,6 +102,13 @@
                 filter: grayscale(1) brightness(calc(var(--brightness) * 7));
             }
         }
+
+        .projectHub {
+            .background {
+                background-image: url(../../assets/wiiBg.jpg);
+                filter: grayscale(1) brightness(calc(var(--brightness) * 7));
+            }
+        }
     }
 }
 
